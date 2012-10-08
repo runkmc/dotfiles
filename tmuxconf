@@ -1,5 +1,6 @@
 # basic behaviors
 
+setw -g mode-keys vi
 set -g default-terminal "screen-256color" 
 set -g base-index 1
 set -s escape-time 1
