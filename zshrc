@@ -31,6 +31,7 @@ ZSH_THEME="doubleend"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(github git)
 
+source $HOME/.wunderground.sh
 source $ZSH/oh-my-zsh.sh
 source $ZSH/paths.sh
 # Customize to your needs...
