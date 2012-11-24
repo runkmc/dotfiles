@@ -37,8 +37,8 @@ set -g status-left-length 40
 set -g status-left "#[fg=green]Session: #S"
 
 # default statusbar colors
-set-option -g status-bg colour235 #base02
-set-option -g status-fg colour136 #yellow
+set-option -g status-bg colour250 #base02
+set-option -g status-fg colour000 #yellow
 set-option -g status-attr default
 
 # default window title colors
@@ -47,7 +47,7 @@ set-window-option -g window-status-bg default
 #set-window-option -g window-status-attr dim
 
 # active window title colors
-set-window-option -g window-status-current-fg colour166 #orange
+set-window-option -g window-status-current-fg colour202 #orange
 set-window-option -g window-status-current-bg default
 #set-window-option -g window-status-current-attr bright
 
