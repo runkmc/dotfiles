@@ -37,7 +37,7 @@ set -g status-left-length 40
 set -g status-left "#[fg=green]Session: #S"
 
 # default statusbar colors
-set-option -g status-bg colour250 #base02
+set-option -g status-bg colour015 #base02
 set-option -g status-fg colour000 #yellow
 set-option -g status-attr default
 
@@ -47,8 +47,8 @@ set-window-option -g window-status-bg default
 #set-window-option -g window-status-attr dim
 
 # active window title colors
-set-window-option -g window-status-current-fg colour198 #orange
-set-window-option -g window-status-current-bg default
+set-window-option -g window-status-current-fg colour015 #orange
+set-window-option -g window-status-current-bg colour002
 set-window-option -g window-status-current-attr bold
 
 # pane border
@@ -73,6 +73,6 @@ set-option -g status-utf8 on
 set-option -g status-justify "centre"
 set-option -g status-left-length 60
 set-option -g status-right-length 90
-set-option -g status-left "#(~/.tm-power/status-left.sh)"
-set-option -g status-right "#(~/.tm-power/status-right.sh)"
+set-option -g status-left "#(~/.tm-power/powerline.sh left)"
+set-option -g status-right "#(~/.tm-power/powerline.sh right)"
 

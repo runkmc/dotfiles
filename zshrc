@@ -30,7 +30,6 @@ ZSH_THEME="doubleend"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(github git)
-
 alias rea=reattach-to-user-namespace -l
 source $HOME/.wunderground.sh
 source $ZSH/oh-my-zsh.sh
