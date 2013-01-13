@@ -1,5 +1,5 @@
 
 run_segment() {
-    ./mymail.rb
+    ~/.dotfiles/segments/mymail.rb
 }
 

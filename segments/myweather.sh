@@ -1,5 +1,5 @@
 
 run_segment() {
-    ./myweather.rb
+    ~/.dotfiles/segments/myweather.rb
 }
 

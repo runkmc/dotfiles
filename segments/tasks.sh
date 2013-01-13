@@ -1,5 +1,5 @@
 
 run_segment() {
-    ./tasks.rb
+    ~/.dotfiles/segments/tasks.rb
 }
 
