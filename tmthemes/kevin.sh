@@ -24,17 +24,17 @@ TMUX_POWERLINE_DEFAULT_RIGHTSIDE_SEPARATOR=${TMUX_POWERLINE_DEFAULT_RIGHTSIDE_SE
 if [ -z $TMUX_POWERLINE_LEFT_STATUS_SEGMENTS ]; then
 	TMUX_POWERLINE_LEFT_STATUS_SEGMENTS=(
 		"tmux_session_info 002 015" \
-		"myweather 006 015" \
+		#"myweather 006 015" \
 		#"hostname 33 0" \
 		#"ifstat 30 255" \
 		#"ifstat_sys 30 255" \
 		#"lan_ip 24 255 ${TMUX_POWERLINE_SEPARATOR_RIGHT_THIN}" \
 		#"wan_ip 24 255" \
-		#"vcs_branch 006 015" \
-		#"vcs_compare 60 255" \
-		#"vcs_staged 64 255" \
-		#"vcs_modified 9 255" \
-		#"vcs_others 245 0" \
+		"vcs_branch 006 015" \
+		"vcs_compare 3 255" \
+		"vcs_staged 2 255" \
+		"vcs_modified 9 255" \
+		"vcs_others 7 10" \
         "tasks 005 015" \
 	)
 fi
@@ -42,7 +42,7 @@ fi
 if [ -z $TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS ]; then
 	TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS=(
 		#"earthquake 3 0" \
-		"pwd 89 211" \
+		#"pwd 89 211" \
 		"mymail 1 015" \
 		"now_playing 13 15" \
 		#"cpu 240 136" \
