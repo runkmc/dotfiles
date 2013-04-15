@@ -18,8 +18,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-endwise'
 Bundle 'gberenfield/sjl-slimv'
 Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'MarcWeber/ultisnips'
-Bundle 'rcyrus/snipmate-snippets-rubymotion'
+Bundle 'SirVer/ultisnips'
 Bundle 'honza/snipmate-snippets'
 Bundle 'gmarik/vundle'
 Bundle 'tomtom/tlib_vim'
@@ -77,6 +76,9 @@ let g:pandoc_no_spans=1
 " eRuby surrounds. - yss- for <% %>, yss= for <%= %>
 let g:surround_45 = "<% \r %>"
 let g:surround_61 = "<%= \r %>"
+
+" Ultisnips bidness
+
 
 set noswapfile
 set showmode
