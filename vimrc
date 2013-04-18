@@ -78,7 +78,8 @@ let g:surround_61 = "<%= \r %>"
 
 " Ultisnips bidness
 
-
+set showmatch
+set matchtime=4
 set noswapfile
 set showmode
 set autoindent
