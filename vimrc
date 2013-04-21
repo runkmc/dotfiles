@@ -105,24 +105,24 @@ vnoremap k gk
 
 nnoremap / /\v
 nnoremap <leader>u :GundoToggle<CR>
-map <S-Tab> <C-W>w
-map + <C-W>+
-map - <C-W>-
-map = <C-W>=
-map ^L <Tab>
+nnoremap <S-Tab> <C-W>w
+nnoremap + <C-W>+
+nnoremap - <C-W>-
+nnoremap = <C-W>=
+nnoremap ^L <Tab>
 
 "Remap arrow keys 
-map <Left> <C-PageUp>
-map <Right> <C-PageDown>
-map <Up> <Esc>:tabnew<CR> 
-map <Down> <Esc>:tabc<CR> 
+nnoremap <Left> <C-PageUp>
+nnoremap <Right> <C-PageDown>
+nnoremap <Up> <Esc>:tabnew<CR> 
+nnoremap <Down> <Esc>:tabc<CR> 
 inoremap <Left> <C-PageUp>
 inoremap <Right> <C-PageDown>
 inoremap <Up> <Esc>:tabnew<CR> 
 inoremap <Down> <Esc>:tabc<CR> 
 
 " Leader zz keeps cursor in the center of the screen
-:nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
+nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 
 " Wildmenu
 set wildmenu
