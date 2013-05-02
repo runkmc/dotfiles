@@ -16,7 +16,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-endwise'
-Bundle 'gberenfield/sjl-slimv'
+Bundle 'vim-scripts/slimv.vim.git'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'gmarik/vundle'
@@ -62,7 +62,6 @@ set formatprg=par
 set tabstop=4
 set shiftwidth=4
 
-
 " Backspace like a normal person
 set backspace=2
 
@@ -76,7 +75,9 @@ let g:pandoc_no_spans=1
 let g:surround_45 = "<% \r %>"
 let g:surround_61 = "<%= \r %>"
 
-" Ultisnips bidness
+" Disable angry paren matching in lisp/racket/clojure/scheme files
+let g:paredit_electric_return=0
+let g:paredit_mode=0
 
 set showmatch
 set matchtime=2
