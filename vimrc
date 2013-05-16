@@ -6,6 +6,7 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-haml'
@@ -16,7 +17,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-endwise'
-Bundle 'vim-scripts/slimv.vim.git'
+Bundle 'guns/vim-clojure-static'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'gmarik/vundle'
