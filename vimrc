@@ -79,6 +79,9 @@ let g:surround_61 = "<%= \r %>"
 let g:paredit_electric_return=0
 let g:paredit_mode=0
 
+"add these subdirs to the path, always. It's just easier this way.
+set path+=app/**,lib/**,scss/**
+
 set showmatch
 set matchtime=2
 set noswapfile
