@@ -81,7 +81,7 @@ let g:paredit_electric_return=0
 let g:paredit_mode=0
 
 "add these subdirs to the path, always. It's just easier this way.
-set path+=app/**,lib/**,scss/**
+set path+=app/**,lib/**,scss/**,spec/**
 
 set showmatch
 set matchtime=2
