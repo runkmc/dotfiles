@@ -51,6 +51,7 @@ autocmd Filetype mail setl spell spelllang=en_us
 autocmd Filetype txt setl spell
 autocmd Filetype eruby setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab foldmethod=syntax
 au BufReadPost *.rkt,*.rktl set filetype=scheme
+
 " Rainbow Parens stuff
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
@@ -58,31 +59,14 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 endif
 
+
+" set some options
 " Tabs and formatter
 set formatprg=par
 set tabstop=4
 set shiftwidth=4
-
 " Backspace like a normal person
 set backspace=2
-
-" Turn on folding in ruby files. I think.
-let ruby_fold=1
-
-" Eliminates pandoc inline highlighting. Speeds things up quite a bit
-let g:pandoc_no_spans=1
-
-" eRuby surrounds. - yss- for <% %>, yss= for <%= %>
-let g:surround_45 = "<% \r %>"
-let g:surround_61 = "<%= \r %>"
-
-" Disable angry paren matching in lisp/racket/clojure/scheme files
-let g:paredit_electric_return=0
-let g:paredit_mode=0
-
-"add these subdirs to the path, always. It's just easier this way.
-set path+=app/**,lib/**,scss/**,spec/**
-
 set showmatch
 set matchtime=2
 set noswapfile
@@ -90,24 +74,35 @@ set showmode
 set autoindent
 set number
 set hidden
-
 " Soft wrapping
 set wrap
 set nolist
 set linebreak
 set textwidth=79
-
 set formatoptions=1
 set lbr
 set formatoptions=qrn1
 set colorcolumn=85
+
+
+" Set some variables for some plugins
+" Turn on folding in ruby files. I think.
+let ruby_fold=1
+" Eliminates pandoc inline highlighting. Speeds things up quite a bit
+let g:pandoc_no_spans=1
+" eRuby surrounds. - yss- for <% %>, yss= for <%= %>
+let g:surround_45 = "<% \r %>"
+let g:surround_61 = "<%= \r %>"
+" Disable angry paren matching in lisp/racket/clojure/scheme files
+let g:paredit_electric_return=0
+let g:paredit_mode=0
+
 
 " Some mappings
 nnoremap j gj
 nnoremap k gk
 vnoremap j gj
 vnoremap k gk
-
 nnoremap / /\v
 nnoremap <leader>u :GundoToggle<CR>
 nnoremap <S-Tab> <C-W>w
@@ -115,8 +110,6 @@ nnoremap + <C-W>+
 nnoremap - <C-W>-
 nnoremap = <C-W>=
 nnoremap ^L <Tab>
-
-"Remap arrow keys 
 nnoremap <Left> <C-PageUp>
 nnoremap <Right> <C-PageDown>
 nnoremap <Up> <Esc>:tabnew<CR> 
@@ -125,7 +118,6 @@ inoremap <Left> <C-PageUp>
 inoremap <Right> <C-PageDown>
 inoremap <Up> <Esc>:tabnew<CR> 
 inoremap <Down> <Esc>:tabc<CR> 
-
 " Leader zz keeps cursor in the center of the screen
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 
@@ -228,3 +220,9 @@ hi def InterestingWord6 guifg=#000000 ctermfg=16 guibg=#ff2c4b ctermbg=195
 
 " }}}
 
+" Rubymotion Stuff
+" if corrent directory is the top level of a Rubymotion project...
+if filereadable("app/app_delegate.rb")
+	set path+=app/**,lib/**,scss/**,spec/**
+	set makeprg=reattach-to-user-namespace\ rake
+endif
