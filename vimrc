@@ -221,7 +221,7 @@ hi def InterestingWord6 guifg=#000000 ctermfg=16 guibg=#ff2c4b ctermbg=195
 " }}}
 
 " Rubymotion Stuff
-" if corrent directory is the top level of a Rubymotion project...
+" if current directory is the top level of a Rubymotion project...
 if filereadable("app/app_delegate.rb")
 	set path+=app/**,lib/**,scss/**,spec/**
 	set makeprg=reattach-to-user-namespace\ rake
