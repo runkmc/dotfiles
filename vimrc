@@ -81,7 +81,8 @@ let g:surround_61 = "<%= \r %>"
 let g:paredit_electric_return=0
 let g:paredit_mode=0
 
-"add these subdirs to the path, always. It's just easier this way.
+"add these subdirs to the path, always. It's just easier this way. Don't judge
+"me
 set path+=app/**,lib/**,scss/**,spec/**
 
 set showmatch
@@ -143,6 +144,9 @@ set wildignore+=*.DS_Store
 
 set incsearch
 set hlsearch
+
+"system clipboard works in terminal:
+set clipboard=unnamed
 
 " Colors
 if has('gui_running')
