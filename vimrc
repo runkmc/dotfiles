@@ -39,6 +39,7 @@ Bundle 'altercation/vim-colors-solarized'
 
 syntax on
 filetype plugin indent on
+runtime macros/matchit.vim
 " Turn on omnicomplete, maybe?
 if has("autocmd") && exists("+omnifunc")            
 	  autocmd Filetype *
