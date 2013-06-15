@@ -28,7 +28,7 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'vim-pandoc/vim-pandoc'
-Bundle 'Townk/vim-autoclose'
+" Bundle 'Townk/vim-autoclose'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'kana/vim-textobj-user.git'
 Bundle 'nelstrom/vim-textobj-rubyblock'
@@ -55,9 +55,11 @@ autocmd Filetype mail setl spell spelllang=en_us
 autocmd Filetype txt setl spell
 autocmd Filetype eruby setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab foldmethod=syntax
 au BufReadPost *.rkt,*.rktl set filetype=scheme
-autocmd FileType clojure let b:AutoClosePairs = AutoClose#DefaultPairsModified("", "'")
-autocmd FileType lisp let b:AutoClosePairs = AutoClose#DefaultPairsModified("", "'")
-autocmd FileType scheme let b:AutoClosePairs = AutoClose#DefaultPairsModified("", "'")
+
+" these are here in case I ever want to install the autoclose plugin again.
+" autocmd FileType clojure let b:AutoClosePairs = AutoClose#DefaultPairsModified("", "'")
+" autocmd FileType lisp let b:AutoClosePairs = AutoClose#DefaultPairsModified("", "'")
+" autocmd FileType scheme let b:AutoClosePairs = AutoClose#DefaultPairsModified("", "'")
 
 " Rainbow Parens stuff
 au VimEnter * RainbowParenthesesToggle
