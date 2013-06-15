@@ -42,6 +42,7 @@ Bundle 'altercation/vim-colors-solarized'
 
 syntax on
 filetype plugin indent on
+runtime macros/matchit.vim
 " Turn on omnicomplete, maybe?
 if has("autocmd") && exists("+omnifunc")            
 	  autocmd Filetype *
@@ -73,6 +74,25 @@ set tabstop=4
 set shiftwidth=4
 " Backspace like a normal person
 set backspace=2
+
+" Turn on folding in ruby files. I think.
+let ruby_fold=1
+
+" Eliminates pandoc inline highlighting. Speeds things up quite a bit
+let g:pandoc_no_spans=1
+
+" eRuby surrounds. - yss- for <% %>, yss= for <%= %>
+let g:surround_45 = "<% \r %>"
+let g:surround_61 = "<%= \r %>"
+
+" Disable angry paren matching in lisp/racket/clojure/scheme files
+let g:paredit_electric_return=0
+let g:paredit_mode=0
+
+"add these subdirs to the path, always. It's just easier this way. Don't judge
+"me
+set path+=app/**,lib/**,scss/**,spec/**
+
 set showmatch
 set matchtime=2
 set noswapfile
@@ -140,6 +160,9 @@ set wildignore+=*.DS_Store
 
 set incsearch
 set hlsearch
+
+"system clipboard works in terminal:
+set clipboard=unnamed
 
 " Colors
 if has('gui_running')
