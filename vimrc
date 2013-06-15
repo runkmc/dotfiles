@@ -34,7 +34,7 @@ Bundle 'kana/vim-textobj-user.git'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'xhr/vim-io'
 Bundle 'godlygeek/tabular'
-Bundle 'Lokaltog/vim-powerline'
+" Bundle 'Lokaltog/vim-powerline'
 Bundle 'sjl/gundo.vim'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
@@ -67,6 +67,13 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 endif
+
+"powerline
+" python from powerline.bindings.vim import source_plugin; source_plugin()
+" source /Users/Kevin/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/plugin/powerline.vim
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
 
 
 " set some options
@@ -187,9 +194,6 @@ set laststatus=2
 " set statusline+=\ [%{&ff}/%Y]            " filetype
 "set statusline+=\ [A=\%03.3b/H=\%02.2B] " ASCII / Hexadecimal value of char
 " set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
-let g:Powerline_colorscheme='solarized'   
-let g:Powerline_symbols = 'fancy'
-
 " Set some highlights independent of colorscheme
 " hi pandocStrong term=standout ctermfg=028 
 " hi pandocEmphasis term=standout ctermfg=056
