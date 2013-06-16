@@ -28,17 +28,17 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'vim-pandoc/vim-pandoc'
-" Bundle 'Townk/vim-autoclose'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'kana/vim-textobj-user.git'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'xhr/vim-io'
 Bundle 'godlygeek/tabular'
-" Bundle 'Lokaltog/vim-powerline'
 Bundle 'sjl/gundo.vim'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'altercation/vim-colors-solarized'
+" Bundle 'Lokaltog/vim-powerline'
+" Bundle 'Townk/vim-autoclose'
 
 syntax on
 filetype plugin indent on
@@ -147,6 +147,10 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 nnoremap / /\v
+nnoremap <C-L> <C-W>l
+nnoremap <C-K> <C-W>k
+nnoremap <C-J> <C-W>j
+nnoremap <C-H> <C-W>h
 nnoremap <leader>u :GundoToggle<CR>
 nnoremap <S-Tab> <C-W>w
 nnoremap + <C-W>+
