@@ -32,9 +32,9 @@ bind -r L resize-pane -R 5
 # set -g status-left "#[fg=green]Session: #S"
 # 
 # # default statusbar colors
-# set-option -g status-bg colour007 #base02
-# set-option -g status-fg colour000 #yellow
-# set-option -g status-attr default
+set-option -g status-bg colour015 #base02
+set-option -g status-fg colour015 #yellow
+set-option -g status-attr default
 # 
 # # default window title colors
 # set-window-option -g window-status-fg colour014 #base0

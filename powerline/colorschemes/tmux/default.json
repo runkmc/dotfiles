@@ -1,7 +1,7 @@
 {
 	"name": "Default color scheme for terminal prompts",
 	"groups": {
-		"background:divider": { "fg": "gray5", "bg": "gray0" },
+		"background:divider": { "fg": "oldlace", "bg": "oldlace" },
 		"session": { "fg": "oldlace", "bg": "sgreen", "attr": ["bold"] },
 		"date": { "fg": "sviolet", "bg": "lightyellow" },
 		"time": { "fg": "oldlace", "bg": "darkgreencopper", "attr": ["bold"] },
@@ -16,7 +16,7 @@
 		"weather_condition_rainy": { "fg": "skyblue1", "bg": "gray0" },
 		"uptime": { "fg": "gray8", "bg": "gray0" },
 		"external_ip": { "fg": "sorange", "bg": "oldlace" },
-		"network_load": { "fg": "gray8", "bg": "lightyellow" },
+		"network_load": { "fg": "sorange", "bg": "oldlace" },
 		"network_load_gradient": { "fg": "green_yellow_orange_red", "bg": "lightyellow" },
 		"system_load": { "fg": "gray8", "bg": "lightyellow" },
 		"system_load_gradient": { "fg": "green_yellow_orange_red", "bg": "lightyellow" },
