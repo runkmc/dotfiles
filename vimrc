@@ -36,6 +36,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'sjl/gundo.vim'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
+Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'altercation/vim-colors-solarized'
 " Bundle 'Lokaltog/vim-powerline'
 " Bundle 'Townk/vim-autoclose'
@@ -147,10 +148,6 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 nnoremap / /\v
-nnoremap <C-L> <C-W>l
-nnoremap <C-K> <C-W>k
-nnoremap <C-J> <C-W>j
-nnoremap <C-H> <C-W>h
 nnoremap <leader>u :GundoToggle<CR>
 nnoremap <S-Tab> <C-W>w
 nnoremap + <C-W>+
