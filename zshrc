@@ -29,6 +29,7 @@ ZSH_THEME="doubleend"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
+# . /lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 plugins=(github git)
 alias rea=reattach-to-user-namespace -l
 source $HOME/.wunderground.sh
