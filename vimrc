@@ -17,6 +17,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-endwise'
+Bundle 'thoughtbot/vim-rspec'
 Bundle 'guns/vim-clojure-static'
 Bundle 'mattonrails/vim-mix'
 Bundle 'elixir-lang/vim-elixir'
@@ -152,8 +153,6 @@ nnoremap <leader>u :GundoToggle<CR>
 nnoremap <S-Tab> <C-W>w
 nnoremap + <C-W>+
 nnoremap - <C-W>-
-nnoremap = <C-W>=
-nnoremap ^L <Tab>
 nnoremap <Left> <C-PageUp>
 nnoremap <Right> <C-PageDown>
 nnoremap <Up> <Esc>:tabnew<CR> 
@@ -164,6 +163,9 @@ inoremap <Up> <Esc>:tabnew<CR>
 inoremap <Down> <Esc>:tabc<CR> 
 " Leader zz keeps cursor in the center of the screen
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
 
 " Wildmenu
 set wildmenu
