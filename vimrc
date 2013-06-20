@@ -39,7 +39,7 @@ Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'altercation/vim-colors-solarized'
-" Bundle 'Lokaltog/vim-powerline'
+Bundle 'davidoc/taskpaper.vim'
 " Bundle 'Townk/vim-autoclose'
 
 syntax on
@@ -161,9 +161,10 @@ inoremap <Left> <C-PageUp>
 inoremap <Right> <C-PageDown>
 inoremap <Up> <Esc>:tabnew<CR> 
 inoremap <Down> <Esc>:tabc<CR> 
+nnoremap <leader>b :bp<bar>sp<bar>bn<bar>bd<CR>
 " Leader zz keeps cursor in the center of the screen
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
-map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>r :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 
