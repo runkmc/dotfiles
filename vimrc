@@ -6,42 +6,50 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'tpope/vim-fireplace'
+" General Plugins
 Bundle 'tpope/vim-unimpaired'
-Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-rake'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-cucumber'
-Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-endwise'
-Bundle 'thoughtbot/vim-rspec'
-Bundle 'guns/vim-clojure-static'
-Bundle 'mattonrails/vim-mix'
-Bundle 'elixir-lang/vim-elixir'
-Bundle 'jimenezrick/vimerl'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'gmarik/vundle'
 Bundle 'tomtom/tlib_vim'
 Bundle 'tomtom/tcomment_vim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'vim-pandoc/vim-pandoc'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'kana/vim-textobj-user.git'
-Bundle 'nelstrom/vim-textobj-rubyblock'
-Bundle 'xhr/vim-io'
 Bundle 'godlygeek/tabular'
 Bundle 'sjl/gundo.vim'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'altercation/vim-colors-solarized'
+
+"Ruby & Rails Related
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'kana/vim-textobj-user.git'
+Bundle 'thoughtbot/vim-rspec'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'tpope/vim-bundler'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-rake'
+Bundle 'tpope/vim-cucumber'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'tpope/vim-rails'
+
+" Languages & Frameworks other than Ruby/Rails
+Bundle 'guns/vim-clojure-static'
 Bundle 'davidoc/taskpaper.vim'
+Bundle 'mattonrails/vim-mix'
+Bundle 'elixir-lang/vim-elixir'
+Bundle 'jimenezrick/vimerl'
+Bundle 'xhr/vim-io'
+Bundle 'tpope/vim-fireplace'
+Bundle 'vim-pandoc/vim-pandoc'
+
+" Unused plugins that I still want to keep track of
 " Bundle 'Townk/vim-autoclose'
 
+"General Setup
 syntax on
 filetype plugin indent on
 runtime macros/matchit.vim
@@ -69,6 +77,9 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 endif
+
+" Put all the things in the path
+set path=$PWD/**
 
 "powerline
 " python from powerline.bindings.vim import source_plugin; source_plugin()
@@ -110,7 +121,6 @@ let g:paredit_mode=0
 
 "add these subdirs to the path, always. It's just easier this way. Don't judge
 "me
-set path+=app/**,lib/**,scss/**,spec/**
 
 set showmatch
 set matchtime=2
@@ -266,10 +276,3 @@ hi def InterestingWord6 guifg=#000000 ctermfg=16 guibg=#ff2c4b ctermbg=195
 " }}}
 
 " }}}
-
-" Rubymotion Stuff
-" if current directory is the top level of a Rubymotion project...
-if filereadable("app/app_delegate.rb")
-	set path+=app/**,lib/**,scss/**,spec/**
-	set makeprg=reattach-to-user-namespace\ rake
-endif
