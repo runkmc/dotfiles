@@ -1,4 +1,3 @@
-
 " forget vi compatibility
 set nocompatible
 " Vundle
@@ -78,8 +77,33 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 endif
 
-" Put all the things in the path
+"General settings
 set path=$PWD/**
+set formatprg=par
+"system clipboard works in terminal:
+set clipboard=unnamed
+set incsearch
+set hlsearch
+set showmatch
+set matchtime=2
+set noswapfile
+set showmode
+set autoindent
+set number
+set hidden
+set wrap " Soft wrapping
+set nolist
+set linebreak
+set textwidth=79
+set lbr
+set formatoptions=qrn1
+set formatoptions-=or
+set colorcolumn=85
+set tabstop=4
+set shiftwidth=4
+set backspace=2 " Backspace like a normal person
+set noshowmode
+set shiftround
 
 "powerline
 " python from powerline.bindings.vim import source_plugin; source_plugin()
@@ -95,50 +119,6 @@ if ! has('gui_running')
         au InsertLeave * set timeoutlen=1000
     augroup END
 endif
-set noshowmode
-
-" set some options
-" Tabs and formatter
-set formatprg=par
-set tabstop=4
-set shiftwidth=4
-" Backspace like a normal person
-set backspace=2
-
-" Turn on folding in ruby files. I think.
-let ruby_fold=1
-
-" Eliminates pandoc inline highlighting. Speeds things up quite a bit
-let g:pandoc_no_spans=1
-
-" eRuby surrounds. - yss- for <% %>, yss= for <%= %>
-let g:surround_45 = "<% \r %>"
-let g:surround_61 = "<%= \r %>"
-
-" Disable angry paren matching in lisp/racket/clojure/scheme files
-let g:paredit_electric_return=0
-let g:paredit_mode=0
-
-"add these subdirs to the path, always. It's just easier this way. Don't judge
-"me
-
-set showmatch
-set matchtime=2
-set noswapfile
-set showmode
-set autoindent
-set number
-set hidden
-" Soft wrapping
-set wrap
-set nolist
-set linebreak
-set textwidth=79
-set formatoptions=1
-set lbr
-set formatoptions=qrn1
-set colorcolumn=85
-
 
 " Set some variables for some plugins
 " Turn on folding in ruby files. I think.
@@ -151,7 +131,16 @@ let g:surround_61 = "<%= \r %>"
 " Disable angry paren matching in lisp/racket/clojure/scheme files
 let g:paredit_electric_return=0
 let g:paredit_mode=0
-
+" Turn on folding in ruby files. I think.
+let ruby_fold=1
+" Eliminates pandoc inline highlighting. Speeds things up quite a bit
+let g:pandoc_no_spans=1
+" eRuby surrounds. - yss- for <% %>, yss= for <%= %>
+let g:surround_45 = "<% \r %>"
+let g:surround_61 = "<%= \r %>"
+" Disable angry paren matching in lisp/racket/clojure/scheme files
+let g:paredit_electric_return=0
+let g:paredit_mode=0
 
 " Some mappings
 nnoremap j gj
@@ -159,10 +148,7 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 nnoremap / /\v
-nnoremap <leader>u :GundoToggle<CR>
-nnoremap <S-Tab> <C-W>w
-nnoremap + <C-W>+
-nnoremap - <C-W>-
+map <C-m> :call Nutoggle()<CR>
 nnoremap <Left> <C-PageUp>
 nnoremap <Right> <C-PageDown>
 nnoremap <Up> <Esc>:tabnew<CR> 
@@ -171,12 +157,23 @@ inoremap <Left> <C-PageUp>
 inoremap <Right> <C-PageDown>
 inoremap <Up> <Esc>:tabnew<CR> 
 inoremap <Down> <Esc>:tabc<CR> 
-nnoremap <leader>b :bp<bar>sp<bar>bn<bar>bd<CR>
+
+" Leader mappings
 " Leader zz keeps cursor in the center of the screen
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
+nnoremap <leader>u :GundoToggle<CR>
 map <Leader>r :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
+nnoremap <leader>b :bp<bar>sp<bar>bn<bar>bd<CR>
+
+function! Nutoggle()
+	if &nu == 1
+		set rnu
+	elseif &rnu == 1
+		set nu
+	endif
+endfunction
 
 " Wildmenu
 set wildmenu
@@ -189,19 +186,8 @@ set wildignore+=*.spl                            " compiled spelling word lists
 set wildignore+=*.sw?                            " Vim swap files
 set wildignore+=*.DS_Store 
 
-set incsearch
-set hlsearch
-
-"system clipboard works in terminal:
-set clipboard=unnamed
-
 " Colors
-if has('gui_running')
-    set background=dark
-else
-    set background=light
-endif
-
+set background=light
 colorscheme solarized
 
 " Spellbad settings
