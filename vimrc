@@ -44,6 +44,7 @@ Bundle 'jimenezrick/vimerl'
 Bundle 'xhr/vim-io'
 Bundle 'tpope/vim-fireplace'
 Bundle 'vim-pandoc/vim-pandoc'
+Bundle 'dag/vim2hs'
 
 " Unused plugins that I still want to keep track of
 " Bundle 'Townk/vim-autoclose'
@@ -96,7 +97,7 @@ set nolist
 set linebreak
 set textwidth=79
 set lbr
-set formatoptions=qrn1
+set formatoptions+=qrn1
 set formatoptions-=or
 set colorcolumn=85
 set tabstop=4
@@ -165,7 +166,11 @@ nnoremap <leader>u :GundoToggle<CR>
 map <Leader>r :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
-nnoremap <leader>b :bp<bar>sp<bar>bn<bar>bd<CR>
+nnoremap <silent> <leader>b :bp<bar>sp<bar>bn<bar>bd<CR>
+nnoremap <silent> <leader>k4 :sp<CR>:vsp<CR><C-w>j:vsp<CR><C-w>k
+nnoremap <silent> <leader>k6 :vsp<CR>:vsp<CR>:sp<CR><C-w>l:sp<CR><C-w>l:sp<CR><C-w>h<C-w>h
+nnoremap <silent> <leader>ks :set spell!<CR>
+
 
 function! Nutoggle()
 	if &nu == 1
