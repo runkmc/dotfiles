@@ -55,27 +55,27 @@ filetype plugin indent on
 runtime macros/matchit.vim
 " Turn on omnicomplete, maybe?
 if has("autocmd") && exists("+omnifunc")            
-	  autocmd Filetype *
-	      \   if &omnifunc == "" |
-	      \     setlocal omnifunc=syntaxcomplete#Complete |
-	      \   endif
-autocmd Filetype ruby setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab foldmethod=syntax
-autocmd Filetype pandoc setl spell undofile spelllang=en_us
-autocmd Filetype mail setl spell spelllang=en_us
-autocmd Filetype txt setl spell
-autocmd Filetype eruby setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab foldmethod=syntax
-au BufReadPost *.rkt,*.rktl set filetype=scheme
+	autocmd Filetype *
+				\   if &omnifunc == "" |
+				\     setlocal omnifunc=syntaxcomplete#Complete |
+				\   endif
+	autocmd Filetype ruby setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab foldmethod=syntax
+	autocmd Filetype pandoc setl spell undofile spelllang=en_us
+	autocmd Filetype mail setl spell spelllang=en_us
+	autocmd Filetype txt setl spell
+	autocmd Filetype eruby setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab foldmethod=syntax
+	au BufReadPost *.rkt,*.rktl set filetype=scheme
 
-" these are here in case I ever want to install the autoclose plugin again.
-" autocmd FileType clojure let b:AutoClosePairs = AutoClose#DefaultPairsModified("", "'")
-" autocmd FileType lisp let b:AutoClosePairs = AutoClose#DefaultPairsModified("", "'")
-" autocmd FileType scheme let b:AutoClosePairs = AutoClose#DefaultPairsModified("", "'")
+	" these are here in case I ever want to install the autoclose plugin again.
+	" autocmd FileType clojure let b:AutoClosePairs = AutoClose#DefaultPairsModified("", "'")
+	" autocmd FileType lisp let b:AutoClosePairs = AutoClose#DefaultPairsModified("", "'")
+	" autocmd FileType scheme let b:AutoClosePairs = AutoClose#DefaultPairsModified("", "'")
 
-" Rainbow Parens stuff
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+	" Rainbow Parens stuff
+	au VimEnter * RainbowParenthesesToggle
+	au Syntax * RainbowParenthesesLoadRound
+	au Syntax * RainbowParenthesesLoadSquare
+	au Syntax * RainbowParenthesesLoadBraces
 endif
 
 "General settings
@@ -113,12 +113,12 @@ python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
 if ! has('gui_running')
-    set ttimeoutlen=10
-    augroup FastEscape
-        autocmd!
-        au InsertEnter * set timeoutlen=0
-        au InsertLeave * set timeoutlen=1000
-    augroup END
+	set ttimeoutlen=10
+	augroup FastEscape
+		autocmd!
+		au InsertEnter * set timeoutlen=0
+		au InsertLeave * set timeoutlen=1000
+	augroup END
 endif
 
 " Set some variables for some plugins
@@ -170,6 +170,7 @@ nnoremap <silent> <leader>b :bp<bar>sp<bar>bn<bar>bd<CR>
 nnoremap <silent> <leader>k4 :sp<CR>:vsp<CR><C-w>j:vsp<CR><C-w>k
 nnoremap <silent> <leader>k6 :vsp<CR>:vsp<CR>:sp<CR><C-w>l:sp<CR><C-w>l:sp<CR><C-w>h<C-w>h
 nnoremap <silent> <leader>ks :set spell!<CR>
+nnoremap <silent> <leader>k= mmgg=G`m<CR>
 
 
 function! Nutoggle()
@@ -223,26 +224,26 @@ set laststatus=2
 noremap <silent> <leader>` :noh<cr>:call clearmatches()<cr>
 
 function! HiInterestingWord(n) " {{{
-    " Save our location.
-    normal! mz
+	" Save our location.
+	normal! mz
 
-    " Yank the current word into the z register.
-    normal! "zyiw
+	" Yank the current word into the z register.
+	normal! "zyiw
 
-    " Calculate an arbitrary match ID.  Hopefully nothing else is using it.
-    let mid = 86750 + a:n
+	" Calculate an arbitrary match ID.  Hopefully nothing else is using it.
+	let mid = 86750 + a:n
 
-    " Clear existing matches, but don't worry if they don't exist.
-    silent! call matchdelete(mid)
+	" Clear existing matches, but don't worry if they don't exist.
+	silent! call matchdelete(mid)
 
-    " Construct a literal pattern that has to match at boundaries.
-    let pat = '\V\<' . escape(@z, '\') . '\>'
+	" Construct a literal pattern that has to match at boundaries.
+	let pat = '\V\<' . escape(@z, '\') . '\>'
 
-    " Actually match the words.
-    call matchadd("InterestingWord" . a:n, pat, 1, mid)
+	" Actually match the words.
+	call matchadd("InterestingWord" . a:n, pat, 1, mid)
 
-    " Move back to our original location.
-    normal! `z
+	" Move back to our original location.
+	normal! `z
 endfunction " }}}
 
 " Mappings {{{
