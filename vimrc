@@ -22,6 +22,7 @@ Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'kien/ctrlp.vim'
 
 "Ruby & Rails Related
 Bundle 'vim-ruby/vim-ruby'
@@ -65,6 +66,8 @@ if has("autocmd") && exists("+omnifunc")
 	autocmd Filetype txt setl spell
 	autocmd Filetype eruby setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab foldmethod=syntax
 	au BufReadPost *.rkt,*.rktl set filetype=scheme
+	autocmd bufwritepost .vimrc source $MYVIMRC
+	autocmd bufwritepost vimrc source $MYVIMRC
 
 	" these are here in case I ever want to install the autoclose plugin again.
 	" autocmd FileType clojure let b:AutoClosePairs = AutoClose#DefaultPairsModified("", "'")
@@ -142,6 +145,8 @@ let g:surround_61 = "<%= \r %>"
 " Disable angry paren matching in lisp/racket/clojure/scheme files
 let g:paredit_electric_return=0
 let g:paredit_mode=0
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 " Some mappings
 nnoremap j gj
@@ -149,7 +154,6 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 nnoremap / /\v
-map <C-m> :call Nutoggle()<CR>
 nnoremap <Left> <C-PageUp>
 nnoremap <Right> <C-PageDown>
 nnoremap <Up> <Esc>:tabnew<CR> 
@@ -171,15 +175,10 @@ nnoremap <silent> <leader>k4 :sp<CR>:vsp<CR><C-w>j:vsp<CR><C-w>k
 nnoremap <silent> <leader>k6 :vsp<CR>:vsp<CR>:sp<CR><C-w>l:sp<CR><C-w>l:sp<CR><C-w>h<C-w>h
 nnoremap <silent> <leader>ks :set spell!<CR>
 nnoremap <silent> <leader>k= mmgg=G`m<CR>
+nnoremap <silent> <leader>kc :call Flipcolors()<CR>
+nnoremap <silent> <leader>kn :call Nutoggle()<CR>
 
 
-function! Nutoggle()
-	if &nu == 1
-		set rnu
-	elseif &rnu == 1
-		set nu
-	endif
-endfunction
 
 " Wildmenu
 set wildmenu
@@ -199,6 +198,23 @@ colorscheme solarized
 " Spellbad settings
 highlight clear SpellBad
 highlight SpellBad guifg=#FFFFFF guibg=#FF0000 ctermfg=red cterm=underline
+
+" Some functions
+function! Nutoggle()
+	if &nu == 1
+		set rnu
+	elseif &rnu == 1
+		set nu
+	endif
+endfunction
+
+function! Flipcolors()
+	if &background == "light"
+		let &background = "dark"
+	elseif &background == "dark"
+		let &background = "light"
+	endif
+endfunction
 
 " first, enable status line always
 set laststatus=2
