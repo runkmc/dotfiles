@@ -6,46 +6,46 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " General Plugins
-Bundle 'tpope/vim-unimpaired'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-endwise'
-Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'SirVer/ultisnips'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'gmarik/vundle'
-Bundle 'tomtom/tlib_vim'
-Bundle 'tomtom/tcomment_vim'
 Bundle 'godlygeek/tabular'
-Bundle 'sjl/gundo.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
-Bundle 'christoomey/vim-tmux-navigator'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'kien/ctrlp.vim'
+Bundle 'SirVer/ultisnips'
+Bundle 'sjl/gundo.vim'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'tomtom/tlib_vim'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
 
 "Ruby & Rails Related
-Bundle 'vim-ruby/vim-ruby'
 Bundle 'kana/vim-textobj-user.git'
-Bundle 'thoughtbot/vim-rspec'
-Bundle 'nelstrom/vim-textobj-rubyblock'
-Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-rake'
-Bundle 'tpope/vim-cucumber'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'thoughtbot/vim-rspec'
+Bundle 'tpope/vim-bundler'
+Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-rake'
+Bundle 'vim-ruby/vim-ruby'
 
 " Languages & Frameworks other than Ruby/Rails
-Bundle 'guns/vim-clojure-static'
+Bundle 'dag/vim2hs'
 Bundle 'davidoc/taskpaper.vim'
-Bundle 'mattonrails/vim-mix'
 Bundle 'elixir-lang/vim-elixir'
+Bundle 'guns/vim-clojure-static'
 Bundle 'jimenezrick/vimerl'
-Bundle 'xhr/vim-io'
+Bundle 'mattonrails/vim-mix'
 Bundle 'tpope/vim-fireplace'
 Bundle 'vim-pandoc/vim-pandoc'
-Bundle 'dag/vim2hs'
+Bundle 'xhr/vim-io'
 
 " Unused plugins that I still want to keep track of
 " Bundle 'Townk/vim-autoclose'
@@ -86,28 +86,28 @@ set path=$PWD/**
 set formatprg=par
 "system clipboard works in terminal:
 set clipboard=unnamed
-set incsearch
-set hlsearch
-set showmatch
-set matchtime=2
-set noswapfile
-set showmode
 set autoindent
-set number
-set hidden
-set wrap " Soft wrapping
-set nolist
-set linebreak
-set textwidth=79
-set lbr
-set formatoptions+=qrn1
-set formatoptions-=or
-set colorcolumn=85
-set tabstop=4
-set shiftwidth=4
 set backspace=2 " Backspace like a normal person
+set colorcolumn=85
+set formatoptions+=qn1
+set formatoptions-=or
+set hidden
+set hlsearch
+set incsearch
+set lbr
+set linebreak
+set matchtime=2
+set nolist
 set noshowmode
+set noswapfile
+set number
 set shiftround
+set shiftwidth=4
+set showmatch
+set showmode
+set tabstop=4
+set textwidth=79
+set wrap " Soft wrapping
 
 "powerline
 " python from powerline.bindings.vim import source_plugin; source_plugin()
@@ -177,8 +177,9 @@ nnoremap <silent> <leader>ks :set spell!<CR>
 nnoremap <silent> <leader>k= mmgg=G`m<CR>
 nnoremap <silent> <leader>kc :call Flipcolors()<CR>
 nnoremap <silent> <leader>kn :call Nutoggle()<CR>
-
-
+map <leader>kr :topleft 35 :split config/routes.rb<cr>zA
+map <leader>kg :topleft 35 :split Gemfile<cr>
+map <leader>kR :topleft 25 :split<cr>:enew<cr>:set buftype=nofile<cr>:read !rake routes<cr>
 
 " Wildmenu
 set wildmenu
