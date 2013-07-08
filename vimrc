@@ -181,6 +181,8 @@ set wildignore+=*.DS_Store
 " Colors
 set background=light
 colorscheme solarized
+highlight StatusLine guifg=#FDF6E3 guibg=#073642 gui=bold ctermfg=15 ctermbg=10 cterm=bold
+highlight StatusLineNC guifg=#586E75 guibg=#EEE8D5 gui=reverse,bold ctermfg=7 ctermbg=12 cterm=reverse,bold
 
 " Spellbad settings
 highlight clear SpellBad
