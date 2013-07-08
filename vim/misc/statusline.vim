@@ -18,35 +18,35 @@ let g:last_mode=""
 " You can redefine these in your .vimrc
 
 if !exists('g:NeatStatusLine_color_normal')
-    let g:NeatStatusLine_color_normal    = 'guifg=#FDF6E3 guibg=#859900 gui=NONE ctermfg=15 ctermbg=2 cterm=bold'
+    let g:NeatStatusLine_color_normal    = 'guifg=#FDF6E3 guibg=#DC322F gui=bold ctermfg=15 ctermbg=1 cterm=bold'
 endif
 
 if !exists('g:NeatStatusLine_color_insert')
-    let g:NeatStatusLine_color_insert    = 'guifg=#FDF6E3 guibg=#268BD2 gui=bold ctermfg=15 ctermbg=4 cterm=bold'
+    let g:NeatStatusLine_color_insert    = 'guifg=#FDF6E3 guibg=#859900 gui=bold ctermfg=15 ctermbg=2 cterm=bold'
 endif
 
 if !exists('g:NeatStatusLine_color_replace')
-    let g:NeatStatusLine_color_replace='guifg=#FDF6E3 guibg=#5b7fbb gui=bold ctermfg=190 ctermbg=67 cterm=bold'
+    let g:NeatStatusLine_color_replace='guifg=#FDF6E3 guibg=#B58900 gui=bold ctermfg=15 ctermbg=3 cterm=bold'
 endif
 
 if !exists('g:NeatStatusLine_color_visual')
-    let g:NeatStatusLine_color_visual='guifg=#ffffff guibg=#810085 gui=NONE ctermfg=15 ctermbg=53 cterm=NONE'
+    let g:NeatStatusLine_color_visual='guifg=#FDF6E3 guibg=#268BD2 gui=bold ctermfg=15 ctermbg=4 cterm=bold'
 endif
 
 if !exists('g:NeatStatusLine_color_position')
-    let g:NeatStatusLine_color_position='guifg=#FDF6E3 guibg=#000000 ctermfg=15 ctermbg=0'
+    let g:NeatStatusLine_color_position='guifg=#FDF6E3 guibg=#D33682 gui=bold ctermfg=15 ctermbg=5 cterm=bold'
 endif
 
 if !exists('g:NeatStatusLine_color_modified')
-    let g:NeatStatusLine_color_modified='guifg=#FDF6E3 guibg=#ff00ff ctermfg=15 ctermbg=5'
+    let g:NeatStatusLine_color_modified='guifg=#FDF6E3 guibg=#2AA198 gui=bold ctermfg=15 ctermbg=6 cterm=bold'
 endif
 
 if !exists('g:NeatStatusLine_color_line')
-    let g:NeatStatusLine_color_line='guifg=#ff00ff guibg=#000000 gui=bold ctermfg=207 ctermbg=0 cterm=bold'
+    let g:NeatStatusLine_color_line='guifg=#FDF6E3 guibg=#CB4B16 gui=bold ctermfg=15 ctermbg=9 cterm=bold'
 endif
 
 if !exists('g:NeatStatusLine_color_filetype')
-    let g:NeatStatusLine_color_filetype='guifg=#FDF6E3 guibg=#00ffff gui=bold ctermfg=0 ctermbg=51 cterm=bold'
+    let g:NeatStatusLine_color_filetype='guifg=#FDF6E3 guibg=#6C71C4 gui=bold ctermfg=15 ctermbg=13 cterm=bold'
 endif
 
 if !exists('g:NeatStatusLine_separator')

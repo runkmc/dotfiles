@@ -23,7 +23,6 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'runkmc/vim-neatstatus'
 
 "Ruby & Rails Related
 Bundle 'kana/vim-textobj-user.git'
@@ -204,14 +203,8 @@ function! Flipcolors()
 	endif
 endfunction
 
-" first, enable status line always
-set laststatus=2
-" set statusline=%<%f\   " Filename
-" set statusline+=%w%h%m%r " Options
-" set statusline+=%{fugitive#statusline()} "  Git
-" set statusline+=\ [%{&ff}/%Y]            " filetype
-"set statusline+=\ [A=\%03.3b/H=\%02.2B] " ASCII / Hexadecimal value of char
-" set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+source $HOME/.dotfiles/vim/misc/statusline.vim
+
 " Set some highlights independent of colorscheme
 " hi pandocStrong term=standout ctermfg=028 
 " hi pandocEmphasis term=standout ctermfg=056
