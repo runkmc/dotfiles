@@ -32,8 +32,8 @@ bind -n C-h run-shell 'tmux-vim-select-pane -L'
 bind -n C-l run-shell 'tmux-vim-select-pane -R'
 bind -n "C-\\" run-shell 'tmux-vim-select-pane -l'
 # status bar
-# set -g status-left-length 40
-# set -g status-left "#[fg=green]Session: #S"
+ set -g status-left-length 40
+ set -g status-left "#[fg=green]Session: #S"
 # 
 # # default statusbar colors
 set-option -g status-bg colour015 #base02
@@ -41,14 +41,14 @@ set-option -g status-fg colour015 #yellow
 set-option -g status-attr default
 # 
 # # default window title colors
-# set-window-option -g window-status-fg colour014 #base0
-# set-window-option -g window-status-bg default
-# #set-window-option -g window-status-attr dim
+ set-window-option -g window-status-fg colour014 #base0
+ set-window-option -g window-status-bg default
+ #set-window-option -g window-status-attr dim
 # 
 # # active window title colors
-# set-window-option -g window-status-current-fg colour009 #orange
-# set-window-option -g window-status-current-bg default
-# set-window-option -g window-status-current-attr bold
+ set-window-option -g window-status-current-fg colour009 #orange
+ set-window-option -g window-status-current-bg default
+ set-window-option -g window-status-current-attr bold
 
 # pane border
 set-option -g pane-border-fg colour235 #base02
@@ -65,6 +65,3 @@ set-option -g display-panes-colour colour166 #orange
 
 # clock
 set-window-option -g clock-mode-colour colour64 #green
-
-# powerline stuff
-source '/Users/kevin/.dotfiles/tmuxpowerline.conf'
