@@ -17,44 +17,14 @@ let g:last_mode=""
 " Color Scheme Settings
 " You can redefine these in your .vimrc
 
-if !exists('g:NeatStatusLine_color_normal')
-    let g:NeatStatusLine_color_normal    = 'guifg=#FDF6E3 guibg=#DC322F gui=bold ctermfg=15 ctermbg=1 cterm=bold'
-endif
-
-if !exists('g:NeatStatusLine_color_insert')
-    let g:NeatStatusLine_color_insert    = 'guifg=#FDF6E3 guibg=#859900 gui=bold ctermfg=15 ctermbg=2 cterm=bold'
-endif
-
-if !exists('g:NeatStatusLine_color_replace')
-    let g:NeatStatusLine_color_replace='guifg=#FDF6E3 guibg=#B58900 gui=bold ctermfg=15 ctermbg=3 cterm=bold'
-endif
-
-if !exists('g:NeatStatusLine_color_visual')
-    let g:NeatStatusLine_color_visual='guifg=#FDF6E3 guibg=#268BD2 gui=bold ctermfg=15 ctermbg=4 cterm=bold'
-endif
-
-if !exists('g:NeatStatusLine_color_position')
-    let g:NeatStatusLine_color_position='guifg=#FDF6E3 guibg=#D33682 gui=bold ctermfg=15 ctermbg=5 cterm=bold'
-endif
-
-if !exists('g:NeatStatusLine_color_modified')
-    let g:NeatStatusLine_color_modified='guifg=#FDF6E3 guibg=#2AA198 gui=bold ctermfg=15 ctermbg=6 cterm=bold'
-endif
-
-if !exists('g:NeatStatusLine_color_line')
-    let g:NeatStatusLine_color_line='guifg=#FDF6E3 guibg=#CB4B16 gui=bold ctermfg=15 ctermbg=9 cterm=bold'
-endif
-
-if !exists('g:NeatStatusLine_color_filetype')
-    let g:NeatStatusLine_color_filetype='guifg=#FDF6E3 guibg=#6C71C4 gui=bold ctermfg=15 ctermbg=13 cterm=bold'
-endif
-
-if !exists('g:NeatStatusLine_separator')
-    let g:NeatStatusLine_separator = '|'
-endif
-
-let g:NeatStatusLine_color_red='guifg=#FDF6E3 guibg=#DC322F gui=bold ctermfg=15 ctermbg=1 cterm=bold'
-
+    let g:NeatStatusLine_color_red = 'guifg=#FDF6E3 guibg=#DC322F gui=bold ctermfg=15 ctermbg=1 cterm=bold'
+    let g:NeatStatusLine_color_green = 'guifg=#FDF6E3 guibg=#859900 gui=bold ctermfg=15 ctermbg=2 cterm=bold'
+    let g:NeatStatusLine_color_yellow = 'guifg=#FDF6E3 guibg=#B58900 gui=bold ctermfg=15 ctermbg=3 cterm=bold'
+    let g:NeatStatusLine_color_blue = 'guifg=#FDF6E3 guibg=#268BD2 gui=bold ctermfg=15 ctermbg=4 cterm=bold'
+    let g:NeatStatusLine_color_magenta = 'guifg=#FDF6E3 guibg=#D33682 gui=bold ctermfg=15 ctermbg=5 cterm=bold'
+    let g:NeatStatusLine_color_cyan = 'guifg=#FDF6E3 guibg=#2AA198 gui=bold ctermfg=15 ctermbg=6 cterm=bold'
+    let g:NeatStatusLine_color_orange = 'guifg=#FDF6E3 guibg=#CB4B16 gui=bold ctermfg=15 ctermbg=9 cterm=bold'
+    let g:NeatStatusLine_color_violet = 'guifg=#FDF6E3 guibg=#6C71C4 gui=bold ctermfg=15 ctermbg=13 cterm=bold'
 
 "==============================================================================
 "==============================================================================
@@ -63,14 +33,14 @@ let g:NeatStatusLine_color_red='guifg=#FDF6E3 guibg=#DC322F gui=bold ctermfg=15 
 function! SetNeatstatusColorscheme()
 
     " Basic color presets
-    exec 'hi User1 '.g:NeatStatusLine_color_insert
-    exec 'hi User2 '.g:NeatStatusLine_color_insert
-    exec 'hi User3 '.g:NeatStatusLine_color_replace
-    exec 'hi User4 '.g:NeatStatusLine_color_visual
-    exec 'hi User5 '.g:NeatStatusLine_color_position
-    exec 'hi User6 '.g:NeatStatusLine_color_modified
-    exec 'hi User7 '.g:NeatStatusLine_color_line
-    exec 'hi User8 '.g:NeatStatusLine_color_filetype
+    exec 'hi User1 '.g:NeatStatusLine_color_green
+    exec 'hi User2 '.g:NeatStatusLine_color_green
+    exec 'hi User3 '.g:NeatStatusLine_color_yellow
+    exec 'hi User4 '.g:NeatStatusLine_color_blue
+    exec 'hi User5 '.g:NeatStatusLine_color_magenta
+    exec 'hi User6 '.g:NeatStatusLine_color_cyan
+    exec 'hi User7 '.g:NeatStatusLine_color_orange
+    exec 'hi User8 '.g:NeatStatusLine_color_violet
 	exec 'hi User9 '.g:NeatStatusLine_color_red
 
 endfunc
@@ -83,26 +53,29 @@ function! Mode()
     elseif mode ==# "i"  | return "INSERT"
     elseif mode ==# "R"  | return "REPLACE"
     elseif mode ==# "v"  | return "VISUAL"
+	elseif mode ==# "s"  | return "SELECT"
+	elseif mode ==# "S"  | return "S-LINE"
     elseif mode ==# "V"  | return "V-LINE"
     elseif mode ==# "" | return "V-BLOCK"
     else                 | return l:mode
     endif
+	call ModeChanged(l:mode)
 
 endfunc    
 
 " Change the values for User1 color preset depending on mode
 function! ModeChanged(mode)
 
-    if     a:mode ==# "n"   | exec 'hi User1 '.g:NeatStatusLine_color_insert
-    elseif a:mode ==# "i"   | exec 'hi User1 '.g:NeatStatusLine_color_visual
-    elseif a:mode ==# "r"   | exec 'hi User1 '.g:NeatStatusLine_color_normal
+    if     a:mode ==# "n"   | exec 'hi User1 '.g:NeatStatusLine_color_green
+    elseif a:mode ==# "i"   | exec 'hi User1 '.g:NeatStatusLine_color_blue
+    elseif a:mode ==# "r"   | exec 'hi User1 '.g:NeatStatusLine_color_red
 
     " FIXME: Visual mode color changes currently do not work.
-    "elseif a:mode ==# "v"  | exec 'hi User1 '.g:NeatStatusLine_color_visual
-    "elseif a:mode ==# "V"  | exec 'hi User1 '.g:NeatStatusLine_color_visual
-    "elseif a:mode ==# "" | exec 'hi User1 '.g:NeatStatusLine_color_visual
+     elseif a:mode ==# "v"  | exec 'hi User1 '.g:NeatStatusLine_color_violet
+     elseif a:mode ==# "V"  | exec 'hi User1 '.g:NeatStatusLine_color_violet
+     elseif a:mode ==# "" | exec 'hi User1 '.g:NeatStatusLine_color_violet
 
-    else                    | exec 'hi User1 '.g:NeatStatusLine_color_line
+    else                    | exec 'hi User1 '.g:NeatStatusLine_color_red
     endif
 
     " Sometimes in console the status line starts repeating so we redraw
@@ -114,6 +87,9 @@ function! ModeChanged(mode)
     return ''
 endfunc
 
+" nnoremap v :call ModeChanged("v")<CR>v
+" nnoremap V :call ModeChanged("V")<CR>V
+" nnoremap <C-v> :call ModeChanged("v")<CR><C-v>
 "==============================================================================
 "==============================================================================
 
@@ -159,7 +135,7 @@ if has('statusline')
     "
     function! SetStatusLineStyle()
 
-        let &stl=""
+        let &stl="%{ModeChanged(mode())}"
         " mode (changes color)
         let &stl.="%1*\ %{Mode()} %0*" 
         " session name
@@ -189,8 +165,9 @@ if has('statusline')
     endfunc
 
     au InsertEnter  * call ModeChanged(v:insertmode)
-    au InsertChange * call ModeChanged(v:insertmode)
+    " au InsertChange * call ModeChanged(v:insertmode)
     au InsertLeave  * call ModeChanged(mode())
+	" au CursorMoved  * call ModeChanged(mode())
 
     " whenever the color scheme changes re-apply the colors
     au ColorScheme * call SetNeatstatusColorscheme()

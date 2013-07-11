@@ -131,6 +131,7 @@ let g:surround_61 = "<%= \r %>"
 " Disable angry paren matching in lisp/racket/clojure/scheme files
 let g:paredit_electric_return=0
 let g:paredit_mode=0
+" ctrlp plugin mappings
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
@@ -148,6 +149,7 @@ inoremap <Left> <C-PageUp>
 inoremap <Right> <C-PageDown>
 inoremap <Up> <Esc>:tabnew<CR> 
 inoremap <Down> <Esc>:tabc<CR> 
+vnoremap . :norm.<CR>
 
 " Leader mappings
 " Leader zz keeps cursor in the center of the screen
