@@ -91,6 +91,7 @@ set backspace=2 " Backspace like a normal person
 set colorcolumn=85
 set formatoptions+=qn1
 set formatoptions-=ro
+set nofoldenable
 set hidden
 set hlsearch
 set incsearch
