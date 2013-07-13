@@ -10,8 +10,8 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
-Bundle 'kien/ctrlp.vim'
 Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'SirVer/ultisnips'
@@ -111,8 +111,6 @@ set wrap " Soft wrapping
 
 
 " Set some variables for some plugins
-" Turn on folding in ruby files. I think.
-let ruby_fold=1
 " Eliminates pandoc inline highlighting. Speeds things up quite a bit
 let g:pandoc_no_spans=1
 " eRuby surrounds. - yss- for <% %>, yss= for <%= %>
@@ -122,7 +120,7 @@ let g:surround_61 = "<%= \r %>"
 let g:paredit_electric_return=0
 let g:paredit_mode=0
 " Turn on folding in ruby files. I think.
-let ruby_fold=1
+" let ruby_fold=1
 " Eliminates pandoc inline highlighting. Speeds things up quite a bit
 let g:pandoc_no_spans=1
 " eRuby surrounds. - yss- for <% %>, yss= for <%= %>
