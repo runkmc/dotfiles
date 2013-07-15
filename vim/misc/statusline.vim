@@ -80,9 +80,9 @@ function! ModeChanged(mode)
 
 	" Sometimes in console the status line starts repeating so we redraw
 	" there is probably a better way to fix this
-	if !has('gui_running')
-		redraw!
-	endif
+	" if !has('gui_running')
+	" 	redraw!
+	" endif
 
 	return ''
 endfunc
