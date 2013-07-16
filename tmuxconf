@@ -53,4 +53,4 @@ set -g message-attr bold
 set -g status-left '#[fg=colour15,bg=colour2,bold] #S #[fg=colour15,bg=colour1,bold]#(/Users/kevin/.dotfiles/mail.rb)'
 set -g window-status-format "#[fg=colour15,bg=colour14] #I #W "
 set -g window-status-current-format "#[fg=colour15,bg=colour9,bold]   #I ⮁ #W   "
-set -g status-right "#[fg=colour15,bg=colour6,bold]  #(uptime)"
+set -g status-right "#[fg=colour15,bg=colour6,bold]  #(uptime) #[fg=colour15,bg=colour4,bold] #(date)"
