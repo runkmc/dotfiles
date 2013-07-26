@@ -23,12 +23,14 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'runkmc/vim-airline'
 
 "Ruby & Rails Related
 Bundle 'kana/vim-textobj-user.git'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'thoughtbot/vim-rspec'
+Bundle 'tpope/vim-rvm'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-haml'
@@ -92,6 +94,7 @@ set colorcolumn=85
 set formatoptions+=qn1
 set formatoptions-=ro
 set nofoldenable
+set laststatus=2
 set hidden
 set hlsearch
 set incsearch
@@ -154,9 +157,9 @@ vnoremap . :norm.<CR>
 " Leader zz keeps cursor in the center of the screen
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 nnoremap <leader>u :GundoToggle<CR>
-map <Leader>r :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
+map <Leader>rr :call RunCurrentSpecFile()<CR>
+map <Leader>rs :call RunNearestSpec()<CR>
+map <Leader>rl :call RunLastSpec()<CR>
 nnoremap <silent> <leader>b :bp<bar>sp<bar>bn<bar>bd<CR>
 nnoremap <silent> <leader>k4 :sp<CR>:vsp<CR><C-w>j:vsp<CR><C-w>k
 nnoremap <silent> <leader>k6 :vsp<CR>:vsp<CR>:sp<CR><C-w>l:sp<CR><C-w>l:sp<CR><C-w>h<C-w>h
@@ -167,6 +170,7 @@ nnoremap <silent> <leader>kn :call Nutoggle()<CR>
 map <leader>kr :topleft 35 :split config/routes.rb<cr>zA
 map <leader>kg :topleft 35 :split Gemfile<cr>
 map <leader>kR :topleft 25 :split<cr>:enew<cr>:set buftype=nofile<cr>:read !rake routes<cr>
+:map <leader>l :PromoteToLet<cr>
 
 " Wildmenu
 set wildmenu
@@ -184,6 +188,12 @@ set background=light
 colorscheme solarized
 highlight StatusLine guifg=#FDF6E3 guibg=#073642 gui=bold ctermfg=15 ctermbg=10 cterm=bold
 highlight StatusLineNC guifg=#586E75 guibg=#EEE8D5 gui=reverse,bold ctermfg=7 ctermbg=12 cterm=reverse,bold
+"
+" Airline statusbar settings
+let g:airline_left_sep=' '
+let g:airline_right_sep=' '
+let g:airline_theme='solarized'
+let g:airline_section_z='%{rvm#statusline()} BUF #%n'
 
 " Spellbad settings
 highlight clear SpellBad
@@ -206,12 +216,26 @@ function! Flipcolors()
 	endif
 endfunction
 
-source $HOME/.dotfiles/vim/misc/statusline.vim
+" source $HOME/.dotfiles/vim/misc/statusline.vim
 
 " Set some highlights independent of colorscheme
 " hi pandocStrong term=standout ctermfg=028 
 " hi pandocEmphasis term=standout ctermfg=056
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PROMOTE VARIABLE TO RSPEC LET
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! PromoteToLet()
+	:normal! dd
+	" :exec '?^\s*it\>'
+	:normal! P
+	:.s/\(\w\+\) = \(.*\)$/let(:\1) { \2 }/
+	:normal ==
+endfunction
+:command! PromoteToLet :call PromoteToLet()
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Highlight Word, courtesy of Steve Losh {{{
 "
 " This mini-plugin provides a few mappings for highlighting words temporarily.
@@ -220,6 +244,7 @@ source $HOME/.dotfiles/vim/misc/statusline.vim
 " word or two to stand out temporarily.  You can search for it, but that only
 " gives you one color of highlighting.  Now you can use <leader>N where N is
 " a number from 1-6 to highlight the current word in a specific color.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 noremap <silent> <leader>` :noh<cr>:call clearmatches()<cr>
 

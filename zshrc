@@ -32,8 +32,8 @@ ZSH_THEME="doubleend"
 # . /lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 plugins=(github git rails4)
 alias rea=reattach-to-user-namespace -l
-alias r1=rvm 1.9.3
-alias r2=rvm 2.0.0
+alias r1=rvm use 1.9.3
+alias r2=rvm use 2.0.0
 source $HOME/.wunderground.sh
 source $ZSH/oh-my-zsh.sh
 source $ZSH/paths.sh
