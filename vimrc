@@ -24,6 +24,9 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'runkmc/vim-airline'
+" needed for dash.vim
+Bundle 'rizzatti/funcoo.vim' 
+Bundle 'rizzatti/dash.vim'
 
 "Ruby & Rails Related
 Bundle 'kana/vim-textobj-user.git'
@@ -67,6 +70,7 @@ if has("autocmd") && exists("+omnifunc")
 	autocmd Filetype mail setl spell spelllang=en_us
 	autocmd Filetype txt setl spell
 	autocmd Filetype eruby setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab foldmethod=syntax
+	autocmd Bufread,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker
 	au BufReadPost *.rkt,*.rktl set filetype=scheme
 	autocmd bufwritepost .vimrc source $MYVIMRC
 	autocmd bufwritepost vimrc source $MYVIMRC
@@ -120,22 +124,14 @@ let g:pandoc_no_spans=1
 " eRuby surrounds. - yss- for <% %>, yss= for <%= %>
 let g:surround_45 = "<% \r %>"
 let g:surround_61 = "<%= \r %>"
-" Disable angry paren matching in lisp/racket/clojure/scheme files
-let g:paredit_electric_return=0
-let g:paredit_mode=0
-" Turn on folding in ruby files. I think.
-" let ruby_fold=1
-" Eliminates pandoc inline highlighting. Speeds things up quite a bit
-let g:pandoc_no_spans=1
-" eRuby surrounds. - yss- for <% %>, yss= for <%= %>
-let g:surround_45 = "<% \r %>"
-let g:surround_61 = "<%= \r %>"
-" Disable angry paren matching in lisp/racket/clojure/scheme files
-let g:paredit_electric_return=0
-let g:paredit_mode=0
 " ctrlp plugin mappings
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+" Airline statusbar settings
+let g:airline_left_sep=' '
+let g:airline_right_sep=' '
+let g:airline_theme='solarized'
+let g:airline_section_z='%{rvm#statusline()} BUF #%n'
 
 " Some mappings
 nnoremap j gj
@@ -145,8 +141,8 @@ vnoremap k gk
 nnoremap / /\v
 nnoremap <Left> <C-PageUp>
 nnoremap <Right> <C-PageDown>
-nnoremap <Up> <Esc>:tabnew<CR> 
-nnoremap <Down> <Esc>:tabc<CR> 
+nnoremap <Up> :tabnew<CR> 
+nnoremap <Down> :tabc<CR> 
 inoremap <Left> <C-PageUp>
 inoremap <Right> <C-PageDown>
 inoremap <Up> <Esc>:tabnew<CR> 
@@ -160,6 +156,7 @@ nnoremap <leader>u :GundoToggle<CR>
 map <Leader>rr :call RunCurrentSpecFile()<CR>
 map <Leader>rs :call RunNearestSpec()<CR>
 map <Leader>rl :call RunLastSpec()<CR>
+map <Leader>ra :!rspec<CR>
 nnoremap <silent> <leader>b :bp<bar>sp<bar>bn<bar>bd<CR>
 nnoremap <silent> <leader>k4 :sp<CR>:vsp<CR><C-w>j:vsp<CR><C-w>k
 nnoremap <silent> <leader>k6 :vsp<CR>:vsp<CR>:sp<CR><C-w>l:sp<CR><C-w>l:sp<CR><C-w>h<C-w>h
@@ -188,12 +185,7 @@ set background=light
 colorscheme solarized
 highlight StatusLine guifg=#FDF6E3 guibg=#073642 gui=bold ctermfg=15 ctermbg=10 cterm=bold
 highlight StatusLineNC guifg=#586E75 guibg=#EEE8D5 gui=reverse,bold ctermfg=7 ctermbg=12 cterm=reverse,bold
-"
-" Airline statusbar settings
-let g:airline_left_sep=' '
-let g:airline_right_sep=' '
-let g:airline_theme='solarized'
-let g:airline_section_z='%{rvm#statusline()} BUF #%n'
+highlight MatchParen cterm=bold gui=bold guifg=#FDF6E3 guibg=#D33682 ctermfg=015 ctermbg=005
 
 " Spellbad settings
 highlight clear SpellBad
