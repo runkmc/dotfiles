@@ -26,13 +26,14 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'runkmc/vim-airline'
 " needed for dash.vim
 Bundle 'rizzatti/funcoo.vim' 
+" Bundle 'tpope/vim-dispatch'
 Bundle 'rizzatti/dash.vim'
 
 "Ruby & Rails Related
 Bundle 'kana/vim-textobj-user.git'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'nelstrom/vim-textobj-rubyblock'
-Bundle 'thoughtbot/vim-rspec'
+" Bundle 'thoughtbot/vim-rspec'
 Bundle 'tpope/vim-rvm'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-cucumber'
@@ -95,8 +96,11 @@ set clipboard=unnamed
 set autoindent
 set backspace=2 " Backspace like a normal person
 set colorcolumn=85
-set formatoptions+=qn1
-set formatoptions-=ro
+set formatoptions+=1
+set formatoptions+=n
+set formatoptions+=q
+set formatoptions-=o
+set formatoptions-=r
 set nofoldenable
 set laststatus=2
 set hidden
@@ -116,7 +120,6 @@ set showmode
 set tabstop=4
 set textwidth=79
 set wrap " Soft wrapping
-
 
 " Set some variables for some plugins
 " Eliminates pandoc inline highlighting. Speeds things up quite a bit
@@ -153,17 +156,12 @@ vnoremap . :norm.<CR>
 " Leader zz keeps cursor in the center of the screen
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 nnoremap <leader>u :GundoToggle<CR>
-map <Leader>rr :call RunCurrentSpecFile()<CR>
-map <Leader>rs :call RunNearestSpec()<CR>
-map <Leader>rl :call RunLastSpec()<CR>
-map <Leader>ra :!rspec<CR>
 nnoremap <silent> <leader>b :bp<bar>sp<bar>bn<bar>bd<CR>
 nnoremap <silent> <leader>k4 :sp<CR>:vsp<CR><C-w>j:vsp<CR><C-w>k
 nnoremap <silent> <leader>k6 :vsp<CR>:vsp<CR>:sp<CR><C-w>l:sp<CR><C-w>l:sp<CR><C-w>h<C-w>h
 nnoremap <silent> <leader>ks :set spell!<CR>
 nnoremap <silent> <leader>k= mmgg=G`m<CR>
 nnoremap <silent> <leader>kc :call Flipcolors()<CR>
-nnoremap <silent> <leader>kn :call Nutoggle()<CR>
 map <leader>kr :topleft 35 :split config/routes.rb<cr>zA
 map <leader>kg :topleft 35 :split Gemfile<cr>
 map <leader>kR :topleft 25 :split<cr>:enew<cr>:set buftype=nofile<cr>:read !rake routes<cr>
@@ -191,15 +189,6 @@ highlight MatchParen cterm=bold gui=bold guifg=#FDF6E3 guibg=#D33682 ctermfg=015
 highlight clear SpellBad
 highlight SpellBad guifg=#FFFFFF guibg=#FF0000 ctermfg=red cterm=underline
 
-" Some functions
-function! Nutoggle()
-	if &nu == 1
-		set rnu
-	elseif &rnu == 1
-		set nu
-	endif
-endfunction
-
 function! Flipcolors()
 	if &background == "light"
 		let &background = "dark"
@@ -208,14 +197,8 @@ function! Flipcolors()
 	endif
 endfunction
 
-" source $HOME/.dotfiles/vim/misc/statusline.vim
-
-" Set some highlights independent of colorscheme
-" hi pandocStrong term=standout ctermfg=028 
-" hi pandocEmphasis term=standout ctermfg=056
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" PROMOTE VARIABLE TO RSPEC LET
+" PROMOTE VARIABLE TO RSPEC LET -- Stolen from Gary Bernhardt
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! PromoteToLet()
 	:normal! dd
@@ -226,62 +209,56 @@ function! PromoteToLet()
 endfunction
 :command! PromoteToLet :call PromoteToLet()
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" RUNNING TESTS -- Stolen without a hint of shame from Gary Bernhardt
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <leader>r :silent call RunTestFile()<cr>
+map <leader>R :silent call RunNearestTest()<cr>
+map <leader>a :silent call RunTests('')<cr>
+map <leader>c :w\|:silent !script/features<cr>
+map <leader>w :w\|:silent !script/features --profile wip<cr>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Highlight Word, courtesy of Steve Losh {{{
-"
-" This mini-plugin provides a few mappings for highlighting words temporarily.
-"
-" Sometimes you're looking at a hairy piece of code and would like a certain
-" word or two to stand out temporarily.  You can search for it, but that only
-" gives you one color of highlighting.  Now you can use <leader>N where N is
-" a number from 1-6 to highlight the current word in a specific color.
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! RunTestFile(...)
+    if a:0
+        let command_suffix = a:1
+    else
+        let command_suffix = ""
+    endif
 
-noremap <silent> <leader>` :noh<cr>:call clearmatches()<cr>
+    " Run the tests for the previously-marked file.
+    let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\)$') != -1
+    if in_test_file
+        call SetTestFile()
+    elseif !exists("t:grb_test_file")
+        return
+    end
+    call RunTests(t:grb_test_file . command_suffix)
+endfunction
 
-function! HiInterestingWord(n) " {{{
-	" Save our location.
-	normal! mz
+function! RunNearestTest()
+    let spec_line_number = line('.')
+    call RunTestFile(":" . spec_line_number)
+endfunction
 
-	" Yank the current word into the z register.
-	normal! "zyiw
+function! SetTestFile()
+    " Set the spec file that tests will be run for.
+    let t:grb_test_file=@%
+endfunction
 
-	" Calculate an arbitrary match ID.  Hopefully nothing else is using it.
-	let mid = 86750 + a:n
-
-	" Clear existing matches, but don't worry if they don't exist.
-	silent! call matchdelete(mid)
-
-	" Construct a literal pattern that has to match at boundaries.
-	let pat = '\V\<' . escape(@z, '\') . '\>'
-
-	" Actually match the words.
-	call matchadd("InterestingWord" . a:n, pat, 1, mid)
-
-	" Move back to our original location.
-	normal! `z
-endfunction " }}}
-
-" Mappings {{{
-
-nnoremap <silent> <leader>1 :call HiInterestingWord(1)<cr>
-nnoremap <silent> <leader>2 :call HiInterestingWord(2)<cr>
-nnoremap <silent> <leader>3 :call HiInterestingWord(3)<cr>
-nnoremap <silent> <leader>4 :call HiInterestingWord(4)<cr>
-nnoremap <silent> <leader>5 :call HiInterestingWord(5)<cr>
-nnoremap <silent> <leader>6 :call HiInterestingWord(6)<cr>
-
-" }}}
-" Default Highlights {{{
-
-hi def InterestingWord1 guifg=#000000 ctermfg=16 guibg=#ffa724 ctermbg=214
-hi def InterestingWord2 guifg=#000000 ctermfg=16 guibg=#aeee00 ctermbg=154
-hi def InterestingWord3 guifg=#000000 ctermfg=16 guibg=#8cffba ctermbg=121
-hi def InterestingWord4 guifg=#000000 ctermfg=16 guibg=#b88853 ctermbg=137
-hi def InterestingWord5 guifg=#000000 ctermfg=16 guibg=#ff9eb8 ctermbg=211
-hi def InterestingWord6 guifg=#000000 ctermfg=16 guibg=#ff2c4b ctermbg=195
-
-" }}}
-
-" }}}
+function! RunTests(filename)
+    " Write the file and run tests for the given filename
+    if expand("%") != ""
+      :w
+    end
+    if match(a:filename, '\.feature$') != -1
+        exec ":!script/features " . a:filename
+    else
+        if filereadable("script/test")
+            exec ":!script/test " . a:filename
+        elseif filereadable("Gemfile")
+            exec ":!bundle exec rspec --color " . a:filename
+        else
+            exec ":!rspec --color " . a:filename
+        end
+    end
+endfunction
