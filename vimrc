@@ -154,6 +154,8 @@ vnoremap . :norm.<CR>
 
 " Leader mappings
 " Leader zz keeps cursor in the center of the screen
+nnoremap <SPACE> <Nop>
+let mapleader = "\<SPACE>"
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 nnoremap <leader>u :GundoToggle<CR>
 nnoremap <silent> <leader>b :bp<bar>sp<bar>bn<bar>bd<CR>
