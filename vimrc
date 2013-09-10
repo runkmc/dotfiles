@@ -36,7 +36,6 @@ Bundle 'nelstrom/vim-textobj-rubyblock'
 " Bundle 'thoughtbot/vim-rspec'
 Bundle 'tpope/vim-rvm'
 Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-rake'
@@ -75,6 +74,18 @@ if has("autocmd") && exists("+omnifunc")
 	au BufReadPost *.rkt,*.rktl set filetype=scheme
 	autocmd bufwritepost .vimrc source $MYVIMRC
 	autocmd bufwritepost vimrc source $MYVIMRC
+	" Set up K for different filetypes	
+	autocmd Filetype ruby nmap K <Plug>DashSearch
+	autocmd Filetype ruby DashKeywords ruby rails rubymotion
+	autocmd Filetype eruby nmap K <Plug>DashSearch
+	autocmd Filetype eruby DashKeywords rails ruby
+	autocmd Filetype css nmap K <Plug>DashSearch
+	autocmd Filetype css DashKeywords css sass bourbon neat
+	autocmd Filetype coffeescript nmap K <Plug>DashSearch
+	autocmd Filetype coffeescript DashKeywords coffeescript jquery
+	autocmd Filetype javascript nmap K <Plug>DashSearch
+	autocmd Filetype javascript DashKeywords javascript jquery
+	autocmd Filetype vim setl keywordprg=""
 
 	" these are here in case I ever want to install the autoclose plugin again.
 	" autocmd FileType clojure let b:AutoClosePairs = AutoClose#DefaultPairsModified("", "'")
@@ -97,10 +108,10 @@ set autoindent
 set backspace=2 " Backspace like a normal person
 set colorcolumn=85
 set formatoptions+=1
-set formatoptions+=n
-set formatoptions+=q
-set formatoptions-=o
-set formatoptions-=r
+set fo+=n
+set fo+=q
+set fo-=o
+set fo-=r
 set nofoldenable
 set laststatus=2
 set hidden
@@ -161,7 +172,6 @@ nnoremap <leader>u :GundoToggle<CR>
 nnoremap <silent> <leader>b :bp<bar>sp<bar>bn<bar>bd<CR>
 nnoremap <silent> <leader>k4 :sp<CR>:vsp<CR><C-w>j:vsp<CR><C-w>k
 nnoremap <silent> <leader>k6 :vsp<CR>:vsp<CR>:sp<CR><C-w>l:sp<CR><C-w>l:sp<CR><C-w>h<C-w>h
-nnoremap <silent> <leader>ks :set spell!<CR>
 nnoremap <silent> <leader>k= mmgg=G`m<CR>
 nnoremap <silent> <leader>kc :call Flipcolors()<CR>
 map <leader>kr :topleft 35 :split config/routes.rb<cr>zA
