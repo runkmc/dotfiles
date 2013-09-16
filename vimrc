@@ -71,21 +71,9 @@ if has("autocmd") && exists("+omnifunc")
 	autocmd Filetype txt setl spell
 	autocmd Filetype eruby setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab foldmethod=syntax
 	autocmd Bufread,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker
-	au BufReadPost *.rkt,*.rktl set filetype=scheme
+	au BufReadPost *.rkt,*.rktl setl filetype=scheme
 	autocmd bufwritepost .vimrc source $MYVIMRC
 	autocmd bufwritepost vimrc source $MYVIMRC
-	" Set up K for different filetypes	
-	autocmd Filetype ruby nmap K <Plug>DashSearch
-	autocmd Filetype ruby DashKeywords ruby rails rubymotion
-	autocmd Filetype eruby nmap K <Plug>DashSearch
-	autocmd Filetype eruby DashKeywords rails ruby
-	autocmd Filetype css nmap K <Plug>DashSearch
-	autocmd Filetype css DashKeywords css sass bourbon neat
-	autocmd Filetype coffeescript nmap K <Plug>DashSearch
-	autocmd Filetype coffeescript DashKeywords coffeescript jquery
-	autocmd Filetype javascript nmap K <Plug>DashSearch
-	autocmd Filetype javascript DashKeywords javascript jquery
-	autocmd Filetype vim setl keywordprg=""
 
 	" these are here in case I ever want to install the autoclose plugin again.
 	" autocmd FileType clojure let b:AutoClosePairs = AutoClose#DefaultPairsModified("", "'")
@@ -131,6 +119,7 @@ set showmode
 set tabstop=4
 set textwidth=79
 set wrap " Soft wrapping
+set keywordprg=""
 
 " Set some variables for some plugins
 " Eliminates pandoc inline highlighting. Speeds things up quite a bit
@@ -174,6 +163,7 @@ nnoremap <silent> <leader>k4 :sp<CR>:vsp<CR><C-w>j:vsp<CR><C-w>k
 nnoremap <silent> <leader>k6 :vsp<CR>:vsp<CR>:sp<CR><C-w>l:sp<CR><C-w>l:sp<CR><C-w>h<C-w>h
 nnoremap <silent> <leader>k= mmgg=G`m<CR>
 nnoremap <silent> <leader>kc :call Flipcolors()<CR>
+nnoremap <silent> <leader>K <Plug>DashSearch
 map <leader>kr :topleft 35 :split config/routes.rb<cr>zA
 map <leader>kg :topleft 35 :split Gemfile<cr>
 map <leader>kR :topleft 25 :split<cr>:enew<cr>:set buftype=nofile<cr>:read !rake routes<cr>
