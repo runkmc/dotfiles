@@ -123,7 +123,7 @@ set keywordprg=""
 
 " Set some variables for some plugins
 " Eliminates pandoc inline highlighting. Speeds things up quite a bit
-let g:pandoc_no_spans=1
+" let g:pandoc_no_spans=1
 " eRuby surrounds. - yss- for <% %>, yss= for <%= %>
 let g:surround_45 = "<% \r %>"
 let g:surround_61 = "<%= \r %>"
