@@ -135,6 +135,9 @@ let g:airline_left_sep=' '
 let g:airline_right_sep=' '
 let g:airline_theme='solarized'
 let g:airline_section_z='%{rvm#statusline()} BUF #%n'
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " Some mappings
 nnoremap j gj
