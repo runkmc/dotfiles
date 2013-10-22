@@ -26,14 +26,14 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'runkmc/vim-airline'
 " needed for dash.vim
 Bundle 'rizzatti/funcoo.vim' 
-" Bundle 'tpope/vim-dispatch'
 Bundle 'rizzatti/dash.vim'
+Bundle 'jgdavey/tslime.vim'
 
 "Ruby & Rails Related
 Bundle 'kana/vim-textobj-user.git'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'nelstrom/vim-textobj-rubyblock'
-" Bundle 'thoughtbot/vim-rspec'
+Bundle 'thoughtbot/vim-rspec'
 Bundle 'tpope/vim-rvm'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-haml'
@@ -138,6 +138,7 @@ let g:airline_section_z='%{rvm#statusline()} BUF #%n'
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:rspec_command = 'call Send_to_Tmux("spring rspec {spec}\n")'
 
 " Some mappings
 nnoremap j gj
@@ -171,6 +172,10 @@ map <leader>kr :topleft 35 :split config/routes.rb<cr>zA
 map <leader>kg :topleft 35 :split Gemfile<cr>
 map <leader>kR :topleft 25 :split<cr>:enew<cr>:set buftype=nofile<cr>:read !rake routes<cr>
 map <leader>l :PromoteToLet<cr>
+map <Leader>f :call RunCurrentSpecFile()<CR>
+map <Leader>n :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
 
 " Wildmenu
 set wildmenu
@@ -213,57 +218,3 @@ function! PromoteToLet()
 	:normal ==
 endfunction
 :command! PromoteToLet :call PromoteToLet()
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" RUNNING TESTS -- Stolen without a hint of shame from Gary Bernhardt
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>r :silent call RunTestFile()<cr>
-map <leader>R :silent call RunNearestTest()<cr>
-map <leader>a :silent call RunTests('')<cr>
-map <leader>c :w\|:silent !script/features<cr>
-map <leader>w :w\|:silent !script/features --profile wip<cr>
-
-function! RunTestFile(...)
-    if a:0
-        let command_suffix = a:1
-    else
-        let command_suffix = ""
-    endif
-
-    " Run the tests for the previously-marked file.
-    let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\)$') != -1
-    if in_test_file
-        call SetTestFile()
-    elseif !exists("t:grb_test_file")
-        return
-    end
-    call RunTests(t:grb_test_file . command_suffix)
-endfunction
-
-function! RunNearestTest()
-    let spec_line_number = line('.')
-    call RunTestFile(":" . spec_line_number)
-endfunction
-
-function! SetTestFile()
-    " Set the spec file that tests will be run for.
-    let t:grb_test_file=@%
-endfunction
-
-function! RunTests(filename)
-    " Write the file and run tests for the given filename
-    if expand("%") != ""
-      :w
-    end
-    if match(a:filename, '\.feature$') != -1
-        exec ":!script/features " . a:filename
-    else
-        if filereadable("script/test")
-            exec ":!script/test " . a:filename
-        elseif filereadable("Gemfile")
-            exec ":!bundle exec rspec --color " . a:filename
-        else
-            exec ":!rspec --color " . a:filename
-        end
-    end
-endfunction

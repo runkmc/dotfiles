@@ -30,10 +30,9 @@ ZSH_THEME="doubleend"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # . /lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+DISABLE_CORRECTION="true"
 plugins=(github git rails4)
 alias rea=reattach-to-user-namespace -l
-alias r1='rvm use 1.9.3'
-alias r2='rvm use 2.0.0'
 alias be='bundle exec'
 source $HOME/.wunderground.sh
 source $ZSH/oh-my-zsh.sh
