@@ -171,7 +171,7 @@ nnoremap <silent> <leader>K <Plug>DashSearch
 map <leader>kr :topleft 35 :split config/routes.rb<cr>zA
 map <leader>kg :topleft 35 :split Gemfile<cr>
 map <leader>kR :topleft 25 :split<cr>:enew<cr>:set buftype=nofile<cr>:read !rake routes<cr>
-map <leader>l :PromoteToLet<cr>
+map <leader>kl :PromoteToLet<cr>
 map <Leader>f :call RunCurrentSpecFile()<CR>
 map <Leader>n :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
