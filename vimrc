@@ -94,7 +94,7 @@ set formatprg=par
 set clipboard=unnamed
 set autoindent
 set backspace=2 " Backspace like a normal person
-set colorcolumn=85
+set colorcolumn=79
 set formatoptions+=1
 set fo+=n
 set fo+=q
