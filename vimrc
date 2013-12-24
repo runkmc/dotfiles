@@ -38,7 +38,7 @@ Bundle 'vim-ruby/vim-ruby'
 
 " Languages & Frameworks other than Ruby/Rails
 Bundle 'dag/vim2hs'
-Bundle 'davidoc/taskpaper.vim'
+" Bundle 'davidoc/taskpaper.vim'
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'guns/vim-clojure-static'
 Bundle 'jimenezrick/vimerl'
