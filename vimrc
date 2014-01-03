@@ -51,6 +51,7 @@ Bundle 'mattonrails/vim-mix'
 Bundle 'tpope/vim-fireplace'
 Bundle 'vim-pandoc/vim-pandoc'
 Bundle 'xhr/vim-io'
+Bundle 'kovisoft/paredit'
 
 " Unused plugins that I still want to keep track of
 " Bundle 'Townk/vim-autoclose'
