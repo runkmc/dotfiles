@@ -43,3 +43,5 @@ PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -
 
 # OPAM configuration
 . /Users/kevin/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
