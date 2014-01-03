@@ -24,26 +24,21 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'runkmc/vim-airline'
-" needed for dash.vim
-Bundle 'rizzatti/funcoo.vim' 
-Bundle 'rizzatti/dash.vim'
 Bundle 'jgdavey/tslime.vim'
 
 "Ruby & Rails Related
 Bundle 'kana/vim-textobj-user.git'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'tpope/vim-rvm'
 Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-rake'
 Bundle 'vim-ruby/vim-ruby'
 
 " Languages & Frameworks other than Ruby/Rails
 Bundle 'dag/vim2hs'
-Bundle 'davidoc/taskpaper.vim'
+" Bundle 'davidoc/taskpaper.vim'
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'guns/vim-clojure-static'
 Bundle 'jimenezrick/vimerl'
