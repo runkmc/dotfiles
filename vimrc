@@ -39,17 +39,14 @@ Bundle 'vim-ruby/vim-ruby'
 " Languages & Frameworks other than Ruby/Rails
 Bundle 'dag/vim2hs'
 " Bundle 'davidoc/taskpaper.vim'
-Bundle 'elixir-lang/vim-elixir'
+" Bundle 'elixir-lang/vim-elixir'
 Bundle 'guns/vim-clojure-static'
 Bundle 'jimenezrick/vimerl'
-Bundle 'mattonrails/vim-mix'
+" Bundle 'mattonrails/vim-mix'
 Bundle 'tpope/vim-fireplace'
 Bundle 'vim-pandoc/vim-pandoc'
 Bundle 'xhr/vim-io'
 Bundle 'kovisoft/paredit'
-
-" Unused plugins that I still want to keep track of
-" Bundle 'Townk/vim-autoclose'
 
 "General Setup
 syntax on
