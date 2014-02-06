@@ -31,7 +31,7 @@ ZSH_THEME="doubleend"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # . /lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 DISABLE_CORRECTION="true"
-plugins=(github git rails4)
+plugins=(github git rails)
 alias rea=reattach-to-user-namespace -l
 alias be='bundle exec'
 source $HOME/.wunderground.sh
