@@ -134,6 +134,9 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'
 
+" netrw settings
+let g:netrw_banner = 0
+
 " Some mappings
 nnoremap j gj
 nnoremap k gk
