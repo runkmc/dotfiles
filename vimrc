@@ -136,6 +136,7 @@ let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'
 
 " netrw settings
 let g:netrw_banner = 0
+let g:netrw_liststyle = 1
 
 " Some mappings
 nnoremap j gj
