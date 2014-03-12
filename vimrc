@@ -45,7 +45,7 @@ Bundle 'guns/vim-clojure-static'
 " Bundle 'jimenezrick/vimerl'
 " Bundle 'mattonrails/vim-mix'
 Bundle 'tpope/vim-fireplace'
-Bundle 'vim-pandoc/vim-pandoc'
+" Bundle 'vim-pandoc/vim-pandoc'
 " Bundle 'xhr/vim-io'
 Bundle 'kovisoft/paredit'
 
