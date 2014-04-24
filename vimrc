@@ -48,7 +48,7 @@ Bundle 'guns/vim-clojure-static'
 Bundle 'tpope/vim-fireplace'
 " Bundle 'vim-pandoc/vim-pandoc'
 " Bundle 'xhr/vim-io'
-Bundle 'kovisoft/paredit'
+" Bundle 'kovisoft/paredit'
 
 "General Setup
 syntax on
