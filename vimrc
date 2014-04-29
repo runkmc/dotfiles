@@ -134,6 +134,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:rspec_command = "Dispatch rspec {spec}"
+let g:Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
 
 " netrw settings
 let g:netrw_banner = 0
