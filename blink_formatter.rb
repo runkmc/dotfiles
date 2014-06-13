@@ -30,9 +30,9 @@ class Blinker < RSpec::Core::Formatters::BaseFormatter
     @failed = true
   end
 
-  def stop
-    system "afplay /Users/kevin/horn.mp3 &" if @failed
-  end
+  # def stop
+  #   system "afplay /Users/kevin/horn.mp3 &" if @failed
+  # end
 
   def passing?
     @current_color == :pass
