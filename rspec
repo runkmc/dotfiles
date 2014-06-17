@@ -1,4 +1,2 @@
 --color
---require /Users/kevin/.dotfiles/blink_formatter.rb
---format Blinker
 --format documentation
