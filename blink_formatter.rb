@@ -16,7 +16,7 @@ class Blinker < RSpec::Core::Formatters::BaseTextFormatter
 
   def set_blink(color)
     @current_color = color
-    command = %W[bt #{COLORS[color]} -d 0]
+    command = %W[bt #{COLORS[color]} -q -d 0]
     system *command
   end
 
