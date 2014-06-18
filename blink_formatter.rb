@@ -1,6 +1,9 @@
-require 'rspec/core/formatters/base_formatter'
+require 'rspec/core/formatters/base_text_formatter'
 
-class Blinker < RSpec::Core::Formatters::BaseFormatter
+class Blinker < RSpec::Core::Formatters::BaseTextFormatter
+
+  RSpec::Core::Formatters.register self, :start, :example_passed, 
+    :example_pending, :example_failed
 
   COLORS = {off: "--rgb=0,0,0", fail: "--rgb=255,10,10", pending: "--rgb=255,200,0",
             pass: "--rgb=10,255,10"}
