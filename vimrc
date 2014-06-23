@@ -86,23 +86,24 @@ endif
 set path=$PWD/**
 set formatprg=par
 "system clipboard works in terminal:
-set clipboard=unnamed
 set autoindent
 set backspace=2 " Backspace like a normal person
+set clipboard=unnamed
 set colorcolumn=79
-set formatoptions+=1
 set fo+=n
 set fo+=q
 set fo-=o
 set fo-=r
-set nofoldenable
-set laststatus=2
+set formatoptions+=1
 set hidden
 set hlsearch
 set incsearch
+set keywordprg=""
+set laststatus=2
 set lbr
 set linebreak
 set matchtime=2
+set nofoldenable
 set nolist
 set noshowmode
 set noswapfile
@@ -114,27 +115,23 @@ set showmode
 set tabstop=4
 set textwidth=79
 set wrap " Soft wrapping
-set keywordprg=""
 
 " Set some variables for some plugins
 " Eliminates pandoc inline highlighting. Speeds things up quite a bit
 " let g:pandoc_no_spans=1
-" eRuby surrounds. - yss- for <% %>, yss= for <%= %>
-let g:surround_45 = "<% \r %>"
-let g:surround_61 = "<%= \r %>"
-" ctrlp plugin mappings
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-" Airline statusbar settings
+let g:Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:airline_left_sep=' '
 let g:airline_right_sep=' '
-let g:airline_theme='solarized'
 let g:airline_section_z='%{rvm#statusline()} BUF #%n'
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:airline_theme='solarized'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_map = '<c-p>'
 let g:rspec_command = "Dispatch rspec {spec}"
-let g:Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
+let g:surround_45 = "<% \r %>"
+let g:surround_61 = "<%= \r %>"
 
 " netrw settings
 let g:netrw_banner = 0
@@ -162,20 +159,20 @@ nnoremap <SPACE> <Nop>
 let mapleader = "\<SPACE>"
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 nnoremap <leader>u :GundoToggle<CR>
+nnoremap <silent> <leader>K <Plug>DashSearch
 nnoremap <silent> <leader>b :bp<bar>sp<bar>bn<bar>bd<CR>
 nnoremap <silent> <leader>k4 :sp<CR>:vsp<CR><C-w>j:vsp<CR><C-w>k
 nnoremap <silent> <leader>k6 :vsp<CR>:vsp<CR>:sp<CR><C-w>l:sp<CR><C-w>l:sp<CR><C-w>h<C-w>h
 nnoremap <silent> <leader>k= mmgg=G`m<CR>
 nnoremap <silent> <leader>kc :call Flipcolors()<CR>
-nnoremap <silent> <leader>K <Plug>DashSearch
-map <leader>kr :topleft 35 :split config/routes.rb<cr>zA
-map <leader>kg :topleft 35 :split Gemfile<cr>
-map <leader>kR :topleft 25 :split<cr>:enew<cr>:set buftype=nofile<cr>:read !rake routes<cr>
-map <leader>kl :PromoteToLet<cr>
-map <Leader>f :call RunCurrentSpecFile()<CR>
-map <Leader>n :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+map <Leader>f :call RunCurrentSpecFile()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>n :call RunNearestSpec()<CR>
+map <leader>kR :topleft 25 :split<cr>:enew<cr>:set buftype=nofile<cr>:read !rake routes<cr>
+map <leader>kg :topleft 35 :split Gemfile<cr>
+map <leader>kl :PromoteToLet<cr>
+map <leader>kr :topleft 35 :split config/routes.rb<cr>zA
 
 " Wildmenu
 set wildmenu
