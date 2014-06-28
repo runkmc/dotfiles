@@ -190,14 +190,6 @@ highlight MatchParen cterm=bold gui=bold guifg=#FDF6E3 guibg=#D33682 ctermfg=015
 highlight clear SpellBad
 highlight SpellBad guifg=#FFFFFF guibg=#FF0000 ctermfg=red cterm=underline
 
-function! Flipcolors()
-	if &background == "light"
-		let &background = "dark"
-	elseif &background == "dark"
-		let &background = "light"
-	endif
-endfunction
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PROMOTE VARIABLE TO RSPEC LET -- Stolen from Gary Bernhardt
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
