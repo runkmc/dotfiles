@@ -39,6 +39,7 @@ Bundle 'vim-ruby/vim-ruby'
 
 "Front end web plugins
 Bundle 'tpope/vim-haml'
+Bundle 'mattn/emmet-vim'
 
 " Languages & Frameworks other than Ruby/Rails
 Bundle 'guns/vim-clojure-static'
