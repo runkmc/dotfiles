@@ -25,7 +25,8 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'runkmc/vim-airline'
-Bundle 'jgdavey/tslime.vim'
+Plugin 'jgdavey/tslime.vim'
+Plugin 'scrooloose/syntastic'
 
 "Ruby & Rails Related
 Plugin 'kana/vim-textobj-user.git'
@@ -53,8 +54,8 @@ Plugin 'tpope/vim-fireplace'
 " Bundle 'elixir-lang/vim-elixir'
 " Bundle 'xhr/vim-io'
 " Bundle 'kovisoft/paredit'
-
 call vundle#end()
+
 "General Setup
 syntax on
 filetype plugin indent on
@@ -86,6 +87,8 @@ if has("autocmd") && exists("+omnifunc")
 	au Syntax * RainbowParenthesesLoadSquare
 	au Syntax * RainbowParenthesesLoadBraces
 endif
+
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [], 'passive_filetypes': [] }
 
 "General settings
 set path=$PWD/**
