@@ -88,8 +88,6 @@ if has("autocmd") && exists("+omnifunc")
 	au Syntax * RainbowParenthesesLoadBraces
 endif
 
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [], 'passive_filetypes': [] }
-
 "General settings
 set path=$PWD/**
 set formatprg=par
@@ -140,6 +138,10 @@ let g:ctrlp_map = '<c-p>'
 let g:rspec_command = "Dispatch rspec {spec}"
 let g:surround_45 = "<% \r %>"
 let g:surround_61 = "<%= \r %>"
+
+" syntastic checkers and stuff
+let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': [], 'passive_filetypes': [] }
+let g:syntastic_scss_checkers = ['scss-lint']
 
 " netrw settings
 let g:netrw_banner = 0
