@@ -181,6 +181,7 @@ map <leader>kR :topleft 25 :split<cr>:enew<cr>:set buftype=nofile<cr>:read !rake
 map <leader>kg :topleft 35 :split Gemfile<cr>
 map <leader>kl :PromoteToLet<cr>
 map <leader>kr :topleft 35 :split config/routes.rb<cr>zA
+map <leader>s :SyntasticCheck<cr>
 
 " Wildmenu
 set wildmenu
