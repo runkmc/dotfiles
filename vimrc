@@ -67,6 +67,8 @@ if has("autocmd") && exists("+omnifunc")
 				\     setlocal omnifunc=syntaxcomplete#Complete |
 				\   endif
 	autocmd Filetype ruby setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab foldmethod=syntax
+	autocmd Filetype css setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab foldmethod=syntax
+	autocmd Filetype scss setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab foldmethod=syntax
 	autocmd Filetype pandoc setl spell undofile spelllang=en_us
 	autocmd Filetype mail setl spell spelllang=en_us
 	autocmd Filetype txt setl spell
@@ -140,8 +142,7 @@ let g:surround_45 = "<% \r %>"
 let g:surround_61 = "<%= \r %>"
 
 " syntastic checkers and stuff
-let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': [], 'passive_filetypes': [] }
-let g:syntastic_scss_checkers = ['scss-lint']
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [], 'passive_filetypes': [] }
 
 " netrw settings
 let g:netrw_banner = 0
@@ -183,7 +184,8 @@ map <leader>kR :topleft 25 :split<cr>:enew<cr>:set buftype=nofile<cr>:read !rake
 map <leader>kg :topleft 35 :split Gemfile<cr>
 map <leader>kl :PromoteToLet<cr>
 map <leader>kr :topleft 35 :split config/routes.rb<cr>zA
-map <leader>s :SyntasticCheck<cr>
+map <leader>s :SyntasticCheck<cr>:Errors<cr>
+map <leader>r :SyntasticReset<cr>
 
 " Wildmenu
 set wildmenu
