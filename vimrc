@@ -45,6 +45,7 @@ Plugin 'mattn/emmet-vim'
 " Languages & Frameworks other than Ruby/Rails
 Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-fireplace'
+Plugin 'Keithbsmiley/swift.vim'
 " Bundle 'jimenezrick/vimerl'
 " Bundle 'mattonrails/vim-mix'
 " Bundle 'vim-pandoc/vim-pandoc'
