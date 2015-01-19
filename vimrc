@@ -1,4 +1,4 @@
-" forget vi compatibility
+
 set nocompatible
 " Vundle
 filetype off
@@ -12,8 +12,6 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'godlygeek/tabular'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'mattn/gist-vim'
-Plugin 'mattn/webapi-vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'sjl/gundo.vim'
 Plugin 'tomtom/tcomment_vim'
@@ -26,7 +24,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'runkmc/vim-airline'
 Plugin 'jgdavey/tslime.vim'
-Plugin 'scrooloose/syntastic'
 
 "Ruby & Rails Related
 Plugin 'kana/vim-textobj-user.git'
@@ -55,6 +52,9 @@ Plugin 'Keithbsmiley/swift.vim'
 " Bundle 'elixir-lang/vim-elixir'
 " Bundle 'xhr/vim-io'
 " Bundle 'kovisoft/paredit'
+" Plugin 'scrooloose/syntastic'
+" Plugin 'mattn/gist-vim'
+" Plugin 'mattn/webapi-vim'
 call vundle#end()
 
 "General Setup
@@ -164,6 +164,11 @@ inoremap <Right> <C-PageDown>
 inoremap <Up> <Esc>:tabnew<CR> 
 inoremap <Down> <Esc>:tabc<CR> 
 vnoremap . :norm.<CR>
+" in order to enable lmaps...
+set iminsert=1
+set imsearch=-1
+cnoremap <C-l> ◊
+lnoremap <C-l> ◊
 
 " Leader mappings
 " Leader zz keeps cursor in the center of the screen
