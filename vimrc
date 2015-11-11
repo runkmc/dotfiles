@@ -70,6 +70,7 @@ if has("autocmd") && exists("+omnifunc")
 	autocmd Filetype ruby setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab foldmethod=syntax
 	autocmd Filetype css setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab foldmethod=syntax
 	autocmd Filetype scss setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab foldmethod=syntax
+	autocmd Filetype haskell setl softtabstop=4 expandtab
 	autocmd Filetype pandoc setl spell undofile spelllang=en_us
 	autocmd Filetype mail setl spell spelllang=en_us
 	autocmd Filetype txt setl spell
