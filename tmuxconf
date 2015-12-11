@@ -3,7 +3,6 @@ set-option -g default-command "reattach-to-user-namespace -l zsh"
 
 # basic behaviors
 setw -g mode-keys vi
-setw -g mode-mouse off
 set -g default-terminal "screen-256color" 
 set -g base-index 1
 set -s escape-time 1
@@ -61,7 +60,7 @@ set -g message-fg colour16
 set -g message-bg colour221
 set -g message-attr bold
 
-set -g status-left '#[fg=colour15,bg=colour2,bold] #S #[fg=colour15,bg=colour1,bold]#(/Users/kevin/.dotfiles/mail.rb)'
+set -g status-left '#[fg=colour15,bg=colour2,bold] #S '
 set -g window-status-format "#[fg=colour15,bg=colour14] #I #W "
 set -g window-status-current-format "#[fg=colour15,bg=colour9,bold]   #I ⮁ #W   "
 # set -g status-right "#[fg=colour15,bg=colour6,bold]  #(uptime) #[fg=colour15,bg=colour4,bold] #(date '+%A, %B %e %Y / %H:%M %Z')"
