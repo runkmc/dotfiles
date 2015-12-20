@@ -178,11 +178,7 @@ let mapleader = "\<SPACE>"
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 nnoremap <leader>u :GundoToggle<CR>
 nnoremap <silent> <leader>K <Plug>DashSearch
-nnoremap <silent> <leader>b :bp<bar>sp<bar>bn<bar>bd<CR>
-nnoremap <silent> <leader>k4 :sp<CR>:vsp<CR><C-w>j:vsp<CR><C-w>k
-nnoremap <silent> <leader>k6 :vsp<CR>:vsp<CR>:sp<CR><C-w>l:sp<CR><C-w>l:sp<CR><C-w>h<C-w>h
 nnoremap <silent> <leader>k= mmgg=G`m<CR>
-nnoremap <silent> <leader>kc :call Flipcolors()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 map <Leader>f :call RunCurrentSpecFile()<CR>
 map <Leader>l :call RunLastSpec()<CR>
