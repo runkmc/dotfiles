@@ -202,15 +202,3 @@ highlight MatchParen cterm=bold gui=bold guifg=#FDF6E3 guibg=#D33682 ctermfg=015
 " Spellbad settings
 highlight clear SpellBad
 highlight SpellBad guifg=#FFFFFF guibg=#FF0000 ctermfg=red cterm=underline
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" PROMOTE VARIABLE TO RSPEC LET -- Stolen from Gary Bernhardt
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! PromoteToLet()
-	:normal! dd
-	" :exec '?^\s*it\>'
-	:normal! P
-	:.s/\(\w\+\) = \(.*\)$/let(:\1) { \2 }/
-	:normal ==
-endfunction
-:command! PromoteToLet :call PromoteToLet()
