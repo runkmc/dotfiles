@@ -143,9 +143,6 @@ let g:rspec_command = "Dispatch rspec {spec}"
 let g:surround_45 = "<% \r %>"
 let g:surround_61 = "<%= \r %>"
 
-" syntastic checkers and stuff
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [], 'passive_filetypes': [] }
-
 " netrw settings
 let g:netrw_banner = 0
 let g:netrw_liststyle = 1
@@ -183,9 +180,6 @@ map <Leader>a :call RunAllSpecs()<CR>
 map <Leader>f :call RunCurrentSpecFile()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>n :call RunNearestSpec()<CR>
-map <leader>kR :topleft 25 :split<cr>:enew<cr>:set buftype=nofile<cr>:read !rake routes<cr>
-map <leader>kg :topleft 35 :split Gemfile<cr>
-map <leader>kl :PromoteToLet<cr>
 
 " Wildmenu
 set wildmenu
