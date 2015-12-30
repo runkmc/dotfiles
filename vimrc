@@ -95,7 +95,6 @@ endif
 "General settings
 set path=$PWD/**
 set formatprg=par
-"system clipboard works in terminal:
 set autoindent
 set backspace=2 " Backspace like a normal person
 set clipboard=unnamed
@@ -127,8 +126,6 @@ set textwidth=79
 set wrap " Soft wrapping
 
 " Set some variables for some plugins
-" Eliminates pandoc inline highlighting. Speeds things up quite a bit
-" let g:pandoc_no_spans=1
 let g:Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
