@@ -31,12 +31,12 @@ Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-rvm'
 Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-rails'
+" Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
 Plugin 'vim-ruby/vim-ruby'
 
 "Front end web plugins
-Plugin 'tpope/vim-haml'
+" Plugin 'tpope/vim-haml'
 Plugin 'mattn/emmet-vim'
 
 " Languages & Frameworks other than Ruby/Rails
