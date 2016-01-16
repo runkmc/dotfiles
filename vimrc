@@ -22,8 +22,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'runkmc/vim-airline'
+Plugin 'vim-airline/vim-airline'
 Plugin 'jgdavey/tslime.vim'
+Plugin 'edkolev/tmuxline.vim'
 
 "Ruby & Rails Related
 Plugin 'kana/vim-textobj-user.git'
@@ -132,7 +133,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:airline_left_sep=' '
 let g:airline_right_sep=' '
-let g:airline_section_z='%{rvm#statusline()} BUF #%n'
+" let g:airline_section_z='BUF #%n'
 let g:airline_theme='solarized'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_map = '<c-p>'
@@ -184,9 +185,8 @@ set wildmode=list:longest
 set wildignore+=*.DS_Store 
 
 " Colors
-set background=light
+set background=dark
 colorscheme solarized
-highlight StatusLine guifg=#FDF6E3 guibg=#073642 gui=bold ctermfg=15 ctermbg=10 cterm=bold
 highlight StatusLineNC guifg=#586E75 guibg=#EEE8D5 gui=reverse,bold ctermfg=7 ctermbg=12 cterm=reverse,bold
 highlight MatchParen cterm=bold gui=bold guifg=#FDF6E3 guibg=#D33682 ctermfg=015 ctermbg=005
 
