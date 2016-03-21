@@ -163,8 +163,8 @@ vnoremap . :norm.<CR>
 " in order to enable lmaps...
 set iminsert=1
 set imsearch=-1
-cnoremap <C-l> ◊
-lnoremap <C-l> ◊
+" cnoremap <C-l> ◊
+" lnoremap <C-l> ◊
 
 " Leader mappings
 " Leader zz keeps cursor in the center of the screen
