@@ -27,13 +27,13 @@ Plugin 'jgdavey/tslime.vim'
 Plugin 'edkolev/tmuxline.vim'
 
 "Ruby & Rails Related
+" Plugin 'thoughtbot/vim-rspec'
+" Plugin 'tpope/vim-bundler'
+" Plugin 'tpope/vim-rails'
+" Plugin 'tpope/vim-rake'
 Plugin 'kana/vim-textobj-user.git'
 Plugin 'nelstrom/vim-textobj-rubyblock'
-Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-rvm'
-Plugin 'tpope/vim-bundler'
-" Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-rake'
 Plugin 'vim-ruby/vim-ruby'
 
 "Front end web plugins
