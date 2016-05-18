@@ -137,9 +137,9 @@ let g:airline_right_sep=' '
 let g:airline_theme='solarized'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_map = '<c-p>'
-let g:rspec_command = "Dispatch rspec {spec}"
-let g:surround_45 = "<% \r %>"
-let g:surround_61 = "<%= \r %>"
+" let g:rspec_command = "Dispatch rspec {spec}"
+" let g:surround_45 = "<% \r %>"
+" let g:surround_61 = "<%= \r %>"
 
 " netrw settings
 let g:netrw_banner = 0
