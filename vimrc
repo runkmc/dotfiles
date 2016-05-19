@@ -189,6 +189,8 @@ set background=dark
 colorscheme solarized
 highlight StatusLineNC guifg=#586E75 guibg=#EEE8D5 gui=reverse,bold ctermfg=7 ctermbg=12 cterm=reverse,bold
 highlight MatchParen cterm=bold gui=bold guifg=#FDF6E3 guibg=#D33682 ctermfg=015 ctermbg=005
+highlight Comment cterm=italic
+highlight String cterm=italic
 
 " Spellbad settings
 highlight clear SpellBad
