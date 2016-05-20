@@ -192,7 +192,6 @@ highlight MatchParen cterm=bold gui=bold guifg=#FDF6E3 guibg=#D33682 ctermfg=015
 highlight Comment cterm=italic gui=italic
 highlight String cterm=italic gui=italic
 highlight Type cterm=italic gui=italic
-set guifont=Operator\ Mono\ Book:h15
 
 " Spellbad settings
 highlight clear SpellBad

@@ -1,4 +1,4 @@
-set guifont=Consolas:h14    " font size
+set guifont=Operator\ Mono\ Book:h15
 set guioptions-=T
 set guioptions-=r
 
