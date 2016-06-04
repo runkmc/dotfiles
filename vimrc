@@ -169,9 +169,9 @@ set imsearch=-1
 
 " Leader mappings
 " Leader zz keeps cursor in the center of the screen
+nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 nnoremap <SPACE> <Nop>
 let mapleader = "\<SPACE>"
-nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 nnoremap <leader>u :GundoToggle<CR>
 nnoremap <silent> <leader>K <Plug>DashSearch
 nnoremap <silent> <leader>k= mmgg=G`m<CR>
