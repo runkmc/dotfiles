@@ -5,4 +5,3 @@ map <C-l> <C-w>l<CR>
 
 vmap gc :xccmd commentAndUncommentCurrentLines<CR>
 nmap gc :xccmd commentAndUncommentCurrentLines<CR>
-
