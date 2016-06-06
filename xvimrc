@@ -1,7 +1,9 @@
+" Window movement
 map <C-j> <C-w>j<CR>
 map <C-k> <C-w>k<CR>
 map <C-h> <C-w>h<CR>
 map <C-l> <C-w>l<CR>
 
+" Comments
 vmap gc :xccmd commentAndUncommentCurrentLines<CR>
 nmap gc :xccmd commentAndUncommentCurrentLines<CR>
