@@ -7,3 +7,6 @@ map <C-l> <C-w>l<CR>
 " Comments
 vmap gc :xccmd commentAndUncommentCurrentLines<CR>
 nmap gc :xccmd commentAndUncommentCurrentLines<CR>
+
+" Testing
+nmap <space>a :xccmd testActiveRunContext<CR>
