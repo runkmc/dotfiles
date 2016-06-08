@@ -19,3 +19,6 @@ vmap k gk
 
 " Create a new file
 nmap <SPACE>f :xccmd newDocument<CR>
+
+" Run the project
+nmap <SPACE>r :run<CR>
