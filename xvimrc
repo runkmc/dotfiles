@@ -9,4 +9,4 @@ vmap gc :xccmd commentAndUncommentCurrentLines<CR>
 nmap gc :xccmd commentAndUncommentCurrentLines<CR>
 
 " Testing
-nmap <space>a :xccmd testActiveRunContext<CR>
+nmap <SPACE>a :xccmd testActiveRunContext<CR>
