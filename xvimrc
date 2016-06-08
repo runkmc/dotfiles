@@ -22,3 +22,6 @@ nmap <SPACE>f :xccmd newDocument<CR>
 
 " Run the project
 nmap <SPACE>r :run<CR>
+
+" When jumping, go to the first non whitespace character
+set startofline
