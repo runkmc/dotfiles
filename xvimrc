@@ -17,5 +17,8 @@ nmap <SPACE>f :xccmd newDocument<CR>
 " Run the project
 nmap <SPACE>r :run<CR>
 
+" Open Source Control Commit
+nmap <SPACE>g :xccmd commitCommand<CR>
+
 " When jumping, go to the first non whitespace character
 set startofline
