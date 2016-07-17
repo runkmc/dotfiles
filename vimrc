@@ -174,10 +174,6 @@ nnoremap <leader>u :GundoToggle<CR>
 nnoremap <silent> <leader>K <Plug>DashSearch
 nnoremap <silent> <leader>k= mmgg=G`m<CR>
 map <Leader>g :Gst<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-map <Leader>f :call RunCurrentSpecFile()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>n :call RunNearestSpec()<CR>
 
 " Wildmenu
 set wildmenu
