@@ -5,24 +5,24 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " General Plugins
-Plugin 'gmarik/Vundle.vim'
+" Plugin 'SirVer/ultisnips'
+" Plugin 'tpope/vim-dispatch'
+" Plugin 'tpope/vim-endwise'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'edkolev/tmuxline.vim'
+Plugin 'gmarik/Vundle.vim'
 Plugin 'godlygeek/tabular'
-Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'jgdavey/tslime.vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'SirVer/ultisnips'
+Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'sjl/gundo.vim'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-commentary'
 Plugin 'vim-airline/vim-airline'
-Plugin 'jgdavey/tslime.vim'
-Plugin 'edkolev/tmuxline.vim'
 
 "Ruby & Rails Related
 " Plugin 'thoughtbot/vim-rspec'
