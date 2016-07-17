@@ -25,18 +25,18 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-airline/vim-airline'
 
 "Ruby & Rails Related
+" Plugin 'kana/vim-textobj-user.git'
+" Plugin 'nelstrom/vim-textobj-rubyblock'
 " Plugin 'thoughtbot/vim-rspec'
 " Plugin 'tpope/vim-bundler'
 " Plugin 'tpope/vim-rails'
 " Plugin 'tpope/vim-rake'
-Plugin 'kana/vim-textobj-user.git'
-Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'tpope/vim-rvm'
 Plugin 'vim-ruby/vim-ruby'
 
 "Front end web plugins
 " Plugin 'tpope/vim-haml'
-Plugin 'mattn/emmet-vim'
+" Plugin 'mattn/emmet-vim'
 
 " Languages & Frameworks other than Ruby/Rails
 " Plugin 'tpope/vim-fireplace'
