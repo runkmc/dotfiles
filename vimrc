@@ -127,9 +127,9 @@ set wrap " Soft wrapping
 
 " Set some variables for some plugins
 let g:Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+" let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:airline_left_sep=' '
 let g:airline_right_sep=' '
 " let g:airline_section_z='BUF #%n'
