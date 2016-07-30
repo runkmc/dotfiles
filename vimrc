@@ -54,6 +54,10 @@ Bundle 'jimenezrick/vimerl'
 Bundle 'mattonrails/vim-mix'
 Bundle 'dag/vim2hs'
 Plugin 'elixir-lang/vim-elixir'
+
+" Cocoa related plugins
+Plugin 'Shougo/neocomplete.vim'
+
 call vundle#end()
 
 "General Setup
