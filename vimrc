@@ -55,10 +55,11 @@ Bundle 'mattonrails/vim-mix'
 Bundle 'dag/vim2hs'
 Plugin 'elixir-lang/vim-elixir'
 
-" Cocoa related plugins
+" Autocompletion related plugins
 Plugin 'mitsuse/autocomplete-swift'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/neosnippet'
+Plugin 'Shougo/neosnippet-snippets'
 
 call vundle#end()
 
