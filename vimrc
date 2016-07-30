@@ -56,7 +56,7 @@ Bundle 'dag/vim2hs'
 Plugin 'elixir-lang/vim-elixir'
 
 " Cocoa related plugins
-Plugin 'Shougo/neocomplete.vim'
+Plugin 'mitsuse/autocomplete-swift'
 
 call vundle#end()
 
