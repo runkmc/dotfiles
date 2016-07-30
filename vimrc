@@ -57,6 +57,7 @@ Plugin 'elixir-lang/vim-elixir'
 
 " Cocoa related plugins
 Plugin 'mitsuse/autocomplete-swift'
+Plugin 'Shougo/neocomplete.vim'
 
 call vundle#end()
 
