@@ -146,7 +146,10 @@ let g:ctrlp_map = '<c-p>'
 " let g:rspec_command = "Dispatch rspec {spec}"
 " let g:surround_45 = "<% \r %>"
 " let g:surround_61 = "<%= \r %>"
-
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
 " netrw settings
 let g:netrw_banner = 0
 let g:netrw_liststyle = 1
