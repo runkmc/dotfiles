@@ -88,11 +88,6 @@ if has("autocmd") && exists("+omnifunc")
 	autocmd bufwritepost .vimrc source $MYVIMRC
 	autocmd bufwritepost vimrc source $MYVIMRC
 
-	" these are here in case I ever want to install the autoclose plugin again.
-	" autocmd FileType clojure let b:AutoClosePairs = AutoClose#DefaultPairsModified("", "'")
-	" autocmd FileType lisp let b:AutoClosePairs = AutoClose#DefaultPairsModified("", "'")
-	" autocmd FileType scheme let b:AutoClosePairs = AutoClose#DefaultPairsModified("", "'")
-
 	" Rainbow Parens stuff
 	au VimEnter * RainbowParenthesesToggle
 	au Syntax * RainbowParenthesesLoadRound
