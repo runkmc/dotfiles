@@ -130,22 +130,12 @@ set wrap " Soft wrapping
 
 " Set some variables for some plugins
 let g:Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
-" let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-" let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:airline_left_sep=' '
 let g:airline_right_sep=' '
 " let g:airline_section_z='BUF #%n'
 let g:airline_theme='solarized'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_map = '<c-p>'
-" let g:rspec_command = "Dispatch rspec {spec}"
-" let g:surround_45 = "<% \r %>"
-" let g:surround_61 = "<%= \r %>"
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
 " netrw settings
 let g:netrw_banner = 0
 let g:netrw_liststyle = 1
