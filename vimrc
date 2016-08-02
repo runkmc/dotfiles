@@ -9,7 +9,7 @@ call vundle#begin()
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'edkolev/tmuxline.vim'
-Plugin 'chriskempson/base16-vim'
+Plugin 'chriskempson/vim-tomorrow-theme'
 
 " Vim behavior
 " Plugin 'tpope/vim-dispatch'
@@ -66,8 +66,8 @@ call vundle#end()
 
 "General Setup
 syntax on
-filetype plugin indent on
 runtime macros/matchit.vim
+filetype plugin indent on
 " Turn on omnicomplete, maybe?
 if has("autocmd") && exists("+omnifunc")            
 	autocmd Filetype *
@@ -177,7 +177,7 @@ set wildmode=list:longest
 set wildignore+=*.DS_Store 
 
 " Colors
-colorscheme base16-eighties
+colorscheme Tomorrow-Night-Eighties
 highlight StatusLineNC guifg=#586E75 guibg=#EEE8D5 gui=reverse,bold ctermfg=7 ctermbg=12 cterm=reverse,bold
 highlight MatchParen cterm=bold gui=bold guifg=#FDF6E3 guibg=#D33682 ctermfg=015 ctermbg=005
 highlight Comment cterm=italic gui=italic
