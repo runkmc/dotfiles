@@ -5,11 +5,11 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Vim appearance
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'edkolev/tmuxline.vim'
+Plugin 'chriskempson/vim-tomorrow-theme'
 
 " Vim behavior
 " Plugin 'tpope/vim-dispatch'
@@ -162,10 +162,10 @@ set imsearch=-1
 " lnoremap <C-l> ◊
 
 " Leader mappings
-" Leader zz keeps cursor in the center of the screen
-nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 nnoremap <SPACE> <Nop>
 let mapleader = "\<SPACE>"
+
+nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 nnoremap <leader>u :GundoToggle<CR>
 nnoremap <silent> <leader>K <Plug>DashSearch
 nnoremap <silent> <leader>k= mmgg=G`m<CR>
@@ -177,8 +177,6 @@ set wildmode=list:longest
 set wildignore+=*.DS_Store 
 
 " Colors
-set background=dark
-colorscheme solarized
 highlight StatusLineNC guifg=#586E75 guibg=#EEE8D5 gui=reverse,bold ctermfg=7 ctermbg=12 cterm=reverse,bold
 highlight MatchParen cterm=bold gui=bold guifg=#FDF6E3 guibg=#D33682 ctermfg=015 ctermbg=005
 highlight Comment cterm=italic gui=italic
