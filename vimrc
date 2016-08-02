@@ -56,10 +56,10 @@ Bundle 'dag/vim2hs'
 Plugin 'elixir-lang/vim-elixir'
 
 " Autocompletion related plugins
-Plugin 'mitsuse/autocomplete-swift'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'Shougo/neosnippet'
-Plugin 'Shougo/neosnippet-snippets'
+" Plugin 'mitsuse/autocomplete-swift'
+" Plugin 'Shougo/neocomplete.vim'
+" Plugin 'Shougo/neosnippet'
+" Plugin 'Shougo/neosnippet-snippets'
 
 call vundle#end()
 
