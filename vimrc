@@ -4,25 +4,26 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" General Plugins
-" Plugin 'SirVer/ultisnips'
-" Plugin 'tpope/vim-dispatch'
-" Plugin 'tpope/vim-endwise'
+" Vim appearance
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'edkolev/tmuxline.vim'
+
+" Vim behavior
 Plugin 'gmarik/Vundle.vim'
+" Plugin 'tpope/vim-dispatch'
+Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'godlygeek/tabular'
 Plugin 'jgdavey/tslime.vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'vim-airline/vim-airline'
 
 "Ruby & Rails Related
 " Plugin 'kana/vim-textobj-user.git'
