@@ -12,8 +12,11 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'edkolev/tmuxline.vim'
 
 " Vim behavior
-Plugin 'gmarik/Vundle.vim'
 " Plugin 'tpope/vim-dispatch'
+" Plugin 'scrooloose/syntastic'
+" Plugin 'mattn/gist-vim'
+" Plugin 'mattn/webapi-vim'
+Plugin 'gmarik/Vundle.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'godlygeek/tabular'
 Plugin 'jgdavey/tslime.vim'
@@ -39,13 +42,10 @@ Plugin 'vim-ruby/vim-ruby'
 " Plugin 'tpope/vim-haml'
 " Plugin 'mattn/emmet-vim'
 
-" Languages & Frameworks other than Ruby/Rails
+" Language related plugins
 " Plugin 'tpope/vim-fireplace'
 " Bundle 'xhr/vim-io'
 " Bundle 'kovisoft/paredit'
-" Plugin 'scrooloose/syntastic'
-" Plugin 'mattn/gist-vim'
-" Plugin 'mattn/webapi-vim'
 " Bundle 'davidoc/taskpaper.vim'
 " Bundle 'vim-pandoc/vim-pandoc'
 " Bundle 'kovisoft/slimv'
@@ -56,7 +56,7 @@ Bundle 'mattonrails/vim-mix'
 Bundle 'dag/vim2hs'
 Plugin 'elixir-lang/vim-elixir'
 
-" Autocompletion related plugins
+" Swift Autocompletion related plugins
 " Plugin 'mitsuse/autocomplete-swift'
 " Plugin 'Shougo/neocomplete.vim'
 " Plugin 'Shougo/neosnippet'
