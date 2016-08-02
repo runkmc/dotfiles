@@ -83,7 +83,7 @@ if has("autocmd") && exists("+omnifunc")
 	autocmd Filetype markdown setl spell
 	autocmd Filetype txt setl spell
 	autocmd Filetype eruby setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab foldmethod=syntax
-	autocmd Bufread,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker
+	autocmd Bufread,BufNewFile *.css,*.scss,*.less setlocal foldmethod=indent
 	au BufReadPost *.rkt,*.rktl setl filetype=scheme
 	autocmd bufwritepost .vimrc source $MYVIMRC
 	autocmd bufwritepost vimrc source $MYVIMRC
