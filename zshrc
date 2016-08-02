@@ -40,7 +40,8 @@ source $ZSH/paths.sh
 PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 # Customize to your needs...
 # export PATH=/Users/kevin/.rvm/gems/ruby-1.9.3-p194/bin:/Users/kevin/.rvm/gems/ruby-1.9.3-p194@global/bin:/Users/kevin/.rvm/rubies/ruby-1.9.3-p194/bin:/Users/kevin/.rvm/bin:/usr/local/git/bin:/Applications/Postgres.app/Contents/MacOS/bin:/usr/local/bin:/Users/kevin/bin:/Users/kevin/.cabal/bin:/Users/kevin/.rvm:/Users/kevin/Library/Haskell/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin
-
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 # OPAM configuration
 . /Users/kevin/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 

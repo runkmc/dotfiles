@@ -9,7 +9,7 @@ call vundle#begin()
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'edkolev/tmuxline.vim'
-Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'chriskempson/base16-vim'
 
 " Vim behavior
 " Plugin 'tpope/vim-dispatch'
@@ -133,7 +133,7 @@ let g:Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
 let g:airline_left_sep=' '
 let g:airline_right_sep=' '
 " let g:airline_section_z='BUF #%n'
-let g:airline_theme='solarized'
+let g:airline_theme='base16_eighties'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_map = '<c-p>'
 " netrw settings
@@ -177,7 +177,8 @@ set wildmode=list:longest
 set wildignore+=*.DS_Store 
 
 " Colors
-colorscheme Tomorrow-Night-Eighties
+let base16colorspace=256
+colorscheme base16-eighties
 highlight StatusLineNC guifg=#586E75 guibg=#EEE8D5 gui=reverse,bold ctermfg=7 ctermbg=12 cterm=reverse,bold
 highlight MatchParen cterm=bold gui=bold guifg=#FDF6E3 guibg=#D33682 ctermfg=015 ctermbg=005
 highlight Comment cterm=italic gui=italic
