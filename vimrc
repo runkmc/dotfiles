@@ -5,7 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Vim appearance
-Plugin 'kien/rainbow_parentheses.vim'
+" Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'edkolev/tmuxline.vim'
@@ -89,10 +89,10 @@ if has("autocmd") && exists("+omnifunc")
 	autocmd bufwritepost vimrc source $MYVIMRC
 
 	" Rainbow Parens stuff
-	au VimEnter * RainbowParenthesesToggle
-	au Syntax * RainbowParenthesesLoadRound
-	au Syntax * RainbowParenthesesLoadSquare
-	au Syntax * RainbowParenthesesLoadBraces
+	" au VimEnter * RainbowParenthesesToggle
+	" au Syntax * RainbowParenthesesLoadRound
+	" au Syntax * RainbowParenthesesLoadSquare
+	" au Syntax * RainbowParenthesesLoadBraces
 endif
 
 "General settings
