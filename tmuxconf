@@ -1,5 +1,5 @@
 # # reattach to user namespace, always and forever
-set-option -g default-command "reattach-to-user-namespace -l zsh"
+set-option -g default-command "reattach-to-user-namespace -l fish"
 
 # basic behaviors
 setw -g mode-keys vi

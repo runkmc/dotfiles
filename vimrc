@@ -2,6 +2,7 @@ set nocompatible
 " Vundle
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
+set shell=/bin/bash
 call vundle#begin()
 
 " Vim appearance
@@ -19,7 +20,7 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'godlygeek/tabular'
-Plugin 'jgdavey/tslime.vim'
+" Plugin 'jgdavey/tslime.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-commentary'
@@ -35,8 +36,8 @@ Plugin 'tpope/vim-unimpaired'
 " Plugin 'tpope/vim-bundler'
 " Plugin 'tpope/vim-rails'
 " Plugin 'tpope/vim-rake'
-Plugin 'tpope/vim-rvm'
-Plugin 'vim-ruby/vim-ruby'
+" Plugin 'tpope/vim-rvm'
+" Plugin 'vim-ruby/vim-ruby'
 
 "Front end web plugins
 " Plugin 'tpope/vim-haml'
@@ -49,8 +50,8 @@ Plugin 'vim-ruby/vim-ruby'
 " Bundle 'davidoc/taskpaper.vim'
 " Bundle 'vim-pandoc/vim-pandoc'
 " Bundle 'kovisoft/slimv'
-Plugin 'guns/vim-clojure-static'
-Plugin 'Keithbsmiley/swift.vim'
+" Plugin 'guns/vim-clojure-static'
+" Plugin 'Keithbsmiley/swift.vim'
 Bundle 'jimenezrick/vimerl'
 Bundle 'mattonrails/vim-mix'
 Bundle 'dag/vim2hs'
