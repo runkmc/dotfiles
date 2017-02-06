@@ -51,7 +51,7 @@ Plugin 'tpope/vim-unimpaired'
 " Bundle 'vim-pandoc/vim-pandoc'
 " Bundle 'kovisoft/slimv'
 " Plugin 'guns/vim-clojure-static'
-" Plugin 'Keithbsmiley/swift.vim'
+Plugin 'Keithbsmiley/swift.vim'
 Bundle 'jimenezrick/vimerl'
 Bundle 'mattonrails/vim-mix'
 Bundle 'dag/vim2hs'
@@ -83,6 +83,7 @@ if has("autocmd") && exists("+omnifunc")
 	autocmd Filetype mail setl spell spelllang=en_us
 	autocmd Filetype markdown setl spell
 	autocmd Filetype txt setl spell
+	autocmd Filetype swift setl makeprg=swift\ % errorformat=%f:%l:%c:\ error:\ %m
 	autocmd Filetype eruby setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab foldmethod=syntax
 	autocmd Bufread,BufNewFile *.css,*.scss,*.less setlocal foldmethod=indent
 	au BufReadPost *.rkt,*.rktl setl filetype=scheme
@@ -170,7 +171,9 @@ nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 nnoremap <leader>u :GundoToggle<CR>
 nnoremap <silent> <leader>K <Plug>DashSearch
 nnoremap <silent> <leader>k= mmgg=G`m<CR>
+nnoremap <leader>c :w<CR>:make<CR>
 map <Leader>g :Gst<CR>
+nnoremap <Leader>r :w<CR>:call RunFile()<CR>
 
 " Wildmenu
 set wildmenu
@@ -178,6 +181,7 @@ set wildmode=list:longest
 set wildignore+=*.DS_Store 
 
 " Colors
+"
 let base16colorspace=256
 colorscheme base16-eighties
 highlight StatusLineNC guifg=#586E75 guibg=#EEE8D5 gui=reverse,bold ctermfg=7 ctermbg=12 cterm=reverse,bold
@@ -189,3 +193,10 @@ highlight Type cterm=italic gui=italic
 " Spellbad settings
 highlight clear SpellBad
 highlight SpellBad guifg=#FFFFFF guibg=#FF0000 ctermfg=red cterm=underline
+
+function! RunFile()
+	if &filetype=='swift'
+		silent !clear
+		execute "!swift " . expand("%:p")
+	endif
+endfunction
