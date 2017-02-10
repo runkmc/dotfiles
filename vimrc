@@ -13,7 +13,6 @@ Plugin 'edkolev/tmuxline.vim'
 Plugin 'chriskempson/base16-vim'
 
 " Vim behavior
-" Plugin 'tpope/vim-dispatch'
 " Plugin 'scrooloose/syntastic'
 " Plugin 'mattn/gist-vim'
 " Plugin 'mattn/webapi-vim'
@@ -24,6 +23,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'kien/ctrlp.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
@@ -44,13 +44,14 @@ Plugin 'tpope/vim-unimpaired'
 " Plugin 'mattn/emmet-vim'
 
 " Language related plugins
-" Plugin 'tpope/vim-fireplace'
+Plugin 'tpope/vim-fireplace'
 " Bundle 'xhr/vim-io'
 " Bundle 'kovisoft/paredit'
 " Bundle 'davidoc/taskpaper.vim'
 " Bundle 'vim-pandoc/vim-pandoc'
 " Bundle 'kovisoft/slimv'
-" Plugin 'guns/vim-clojure-static'
+Plugin 'wlangstroth/vim-racket'
+Plugin 'guns/vim-clojure-static'
 Plugin 'Keithbsmiley/swift.vim'
 Bundle 'jimenezrick/vimerl'
 Bundle 'mattonrails/vim-mix'
@@ -75,18 +76,20 @@ if has("autocmd") && exists("+omnifunc")
 				\   if &omnifunc == "" |
 				\     setlocal omnifunc=syntaxcomplete#Complete |
 				\   endif
+	autocmd Filetype sml setl makeprg=mlton\ % errorformat=%EError:\ %f\ %l.%v.,%C\ \ %m,%WWarning:\ %f\ %l.%v.,%C\ \ %m
 	autocmd Filetype ruby setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab foldmethod=syntax
 	autocmd Filetype css setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab foldmethod=indent
 	autocmd Filetype scss setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab foldmethod=indent
 	autocmd Filetype haskell setl softtabstop=4 expandtab
+	autocmd Filetype elixir setl makeprg=elixir\ %
 	autocmd Filetype pandoc setl spell undofile spelllang=en_us
 	autocmd Filetype mail setl spell spelllang=en_us
 	autocmd Filetype markdown setl spell
+	autocmd Filetype racket setl makeprg=racket\ %
 	autocmd Filetype txt setl spell
 	autocmd Filetype swift setl makeprg=swift\ % errorformat=%f:%l:%c:\ error:\ %m
 	autocmd Filetype eruby setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab foldmethod=syntax
 	autocmd Bufread,BufNewFile *.css,*.scss,*.less setlocal foldmethod=indent
-	au BufReadPost *.rkt,*.rktl setl filetype=scheme
 	autocmd bufwritepost .vimrc source $MYVIMRC
 	autocmd bufwritepost vimrc source $MYVIMRC
 
@@ -171,7 +174,7 @@ nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 nnoremap <leader>u :GundoToggle<CR>
 nnoremap <silent> <leader>K <Plug>DashSearch
 nnoremap <silent> <leader>k= mmgg=G`m<CR>
-nnoremap <leader>c :w<CR>:make<CR>
+nnoremap <leader>c :w<CR>:Dispatch<CR>
 map <Leader>g :Gst<CR>
 nnoremap <Leader>r :w<CR>:call RunFile()<CR>
 
@@ -195,8 +198,14 @@ highlight clear SpellBad
 highlight SpellBad guifg=#FFFFFF guibg=#FF0000 ctermfg=red cterm=underline
 
 function! RunFile()
+	silent !clear
 	if &filetype=='swift'
-		silent !clear
 		execute "!swift " . expand("%:p")
+	endif
+	if &filetype=='sml'
+		execute "!" . shellescape(expand("%:r"))
+	endif
+	if &filetype=='racket'
+		execute "!racket " . expand("%:p")
 	endif
 endfunction
