@@ -44,7 +44,7 @@ Plugin 'tpope/vim-unimpaired'
 " Plugin 'mattn/emmet-vim'
 
 " Language related plugins
-Plugin 'tpope/vim-fireplace'
+" Plugin 'tpope/vim-fireplace'
 " Bundle 'xhr/vim-io'
 " Bundle 'kovisoft/paredit'
 " Bundle 'davidoc/taskpaper.vim'
@@ -198,14 +198,31 @@ highlight clear SpellBad
 highlight SpellBad guifg=#FFFFFF guibg=#FF0000 ctermfg=red cterm=underline
 
 function! RunFile()
-	silent !clear
 	if &filetype=='swift'
+		silent !clear
 		execute "!swift " . expand("%:p")
 	endif
 	if &filetype=='sml'
+		silent !clear
 		execute "!" . shellescape(expand("%:r"))
 	endif
 	if &filetype=='racket'
+		silent !clear
 		execute "!racket " . expand("%:p")
+	endif
+	if &filetype=='elixir'
+		silent !clear
+		execute "!elixir " . expand("%:p")
+	endif
+	if &filetype=='javascript'
+		silent !clear
+		execute "!node " . expand("%:p")
+	endif
+endfunction
+
+function! KeywordHelp()
+	if &filetype=='javascript'
+		let l:term=expand("<cword>")
+		execute "!open https://developer.mozilla.org/en-US/search?q=" . l:term . "&topic=js"
 	endif
 endfunction
