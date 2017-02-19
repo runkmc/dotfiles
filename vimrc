@@ -222,7 +222,6 @@ endfunction
 
 function! KeywordHelp()
 	if &filetype=='javascript'
-		let l:term=expand("<cword>")
-		execute "!open https://developer.mozilla.org/en-US/search?q=" . l:term . "&topic=js"
+		execute '!open https://developer.mozilla.org/en-US/search?topic=js\&q=' . expand("<cword>")
 	endif
 endfunction
