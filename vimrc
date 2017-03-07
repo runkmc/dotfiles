@@ -132,6 +132,7 @@ set showmode
 set tabstop=4
 set textwidth=79
 set wrap " Soft wrapping
+set grepprg=ag\ --nogroup\ --nocolor
 
 " Set some variables for some plugins
 let g:Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
@@ -141,6 +142,8 @@ let g:airline_right_sep=' '
 let g:airline_theme='base16_eighties'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_map = '<c-p>'
+let g:ctrlp_user_command = 'ag %s -l -nocolor -g ""'
+let g:ctrlp_use_caching = 0
 " netrw settings
 let g:netrw_banner = 0
 let g:netrw_liststyle = 1
@@ -172,11 +175,10 @@ let mapleader = "\<SPACE>"
 
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 nnoremap <leader>u :GundoToggle<CR>
-nnoremap <silent> <leader>K <Plug>DashSearch
 nnoremap <silent> <leader>k= mmgg=G`m<CR>
+nnoremap <leader>K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 nnoremap <leader>c :w<CR>:Dispatch<CR>
 map <Leader>g :Gst<CR>
-nnoremap <Leader>r :w<CR>:call RunFile()<CR>
 
 " Wildmenu
 set wildmenu
@@ -213,15 +215,5 @@ function! RunFile()
 	if &filetype=='elixir'
 		silent !clear
 		execute "!elixir " . expand("%:p")
-	endif
-	if &filetype=='javascript'
-		silent !clear
-		execute "!node " . expand("%:p")
-	endif
-endfunction
-
-function! KeywordHelp()
-	if &filetype=='javascript'
-		execute '!open https://developer.mozilla.org/en-US/search?topic=js\&q=' . expand("<cword>")
 	endif
 endfunction
