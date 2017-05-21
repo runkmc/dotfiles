@@ -1,0 +1,50 @@
+1490040863.545799 client started (6950): socket /private/tmp/tmux-501/default, protocol 8
+1490040863.545834 on Darwin 16.4.0 Darwin Kernel Version 16.4.0: Thu Dec 22 22:53:21 PST 2016; root:xnu-3789.41.3~3/RELEASE_X86_64; libevent 2.1.8-stable (select)
+1490040863.545868 socket is /private/tmp/tmux-501/default
+1490040863.545884 trying connect
+1490040863.545906 connect failed: Connection refused
+1490040863.546027 lock file is /private/tmp/tmux-501/default.lock
+1490040863.560150 flock succeeded
+1490040863.560165 got lock (7)
+1490040863.560175 trying connect
+1490040863.560187 connect failed: Connection refused
+1490040863.589586 add peer 0x7fcf75801800: 8 (0x0)
+1490040863.596501 sending message 100 to peer 0x7fcf75801800 (4 bytes)
+1490040863.596523 sending message 101 to peer 0x7fcf75801800 (22 bytes)
+1490040863.596529 sending message 102 to peer 0x7fcf75801800 (13 bytes)
+1490040863.596534 sending message 108 to peer 0x7fcf75801800 (23 bytes)
+1490040863.596546 sending message 104 to peer 0x7fcf75801800 (0 bytes)
+1490040863.596552 sending message 107 to peer 0x7fcf75801800 (4 bytes)
+1490040863.596557 sending message 105 to peer 0x7fcf75801800 (76 bytes)
+1490040863.596561 sending message 105 to peer 0x7fcf75801800 (15 bytes)
+1490040863.596566 sending message 105 to peer 0x7fcf75801800 (75 bytes)
+1490040863.596571 sending message 105 to peer 0x7fcf75801800 (18 bytes)
+1490040863.596576 sending message 105 to peer 0x7fcf75801800 (22 bytes)
+1490040863.596580 sending message 105 to peer 0x7fcf75801800 (61 bytes)
+1490040863.596585 sending message 105 to peer 0x7fcf75801800 (17 bytes)
+1490040863.596590 sending message 105 to peer 0x7fcf75801800 (14 bytes)
+1490040863.596595 sending message 105 to peer 0x7fcf75801800 (447 bytes)
+1490040863.596600 sending message 105 to peer 0x7fcf75801800 (27 bytes)
+1490040863.596605 sending message 105 to peer 0x7fcf75801800 (26 bytes)
+1490040863.596609 sending message 105 to peer 0x7fcf75801800 (8 bytes)
+1490040863.596614 sending message 105 to peer 0x7fcf75801800 (66 bytes)
+1490040863.596619 sending message 105 to peer 0x7fcf75801800 (27 bytes)
+1490040863.596624 sending message 105 to peer 0x7fcf75801800 (23 bytes)
+1490040863.596636 sending message 105 to peer 0x7fcf75801800 (28 bytes)
+1490040863.596641 sending message 105 to peer 0x7fcf75801800 (60 bytes)
+1490040863.596646 sending message 105 to peer 0x7fcf75801800 (57 bytes)
+1490040863.596651 sending message 105 to peer 0x7fcf75801800 (11 bytes)
+1490040863.596657 sending message 105 to peer 0x7fcf75801800 (14 bytes)
+1490040863.596662 sending message 105 to peer 0x7fcf75801800 (19 bytes)
+1490040863.596668 sending message 105 to peer 0x7fcf75801800 (38 bytes)
+1490040863.596675 sending message 105 to peer 0x7fcf75801800 (17 bytes)
+1490040863.596681 sending message 105 to peer 0x7fcf75801800 (15 bytes)
+1490040863.596687 sending message 106 to peer 0x7fcf75801800 (0 bytes)
+1490040863.596696 sending message 200 to peer 0x7fcf75801800 (4 bytes)
+1490040863.596701 client loop enter
+1490040863.627024 peer 0x7fcf75801800 message 207
+1490040863.627044 sending message 208 to peer 0x7fcf75801800 (0 bytes)
+1490040866.118912 peer 0x7fcf75801800 message 203
+1490040866.118922 sending message 205 to peer 0x7fcf75801800 (0 bytes)
+1490040866.119254 peer 0x7fcf75801800 message 204
+1490040866.119264 client loop exit

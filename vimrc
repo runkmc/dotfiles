@@ -1,33 +1,31 @@
 set nocompatible
-" Vundle
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
 set shell=/bin/bash
-call vundle#begin()
-
+call plug#begin('~/.vim/plugged')
 " Vim appearance
 " Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'edkolev/tmuxline.vim'
-Plugin 'chriskempson/base16-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'edkolev/tmuxline.vim'
+" Plugin 'chriskempson/base16-vim'
+Plug 'morhetz/gruvbox'
 
 " Vim behavior
 " Plugin 'scrooloose/syntastic'
 " Plugin 'mattn/gist-vim'
 " Plugin 'mattn/webapi-vim'
-Plugin 'gmarik/Vundle.vim'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'godlygeek/tabular'
+Plug 'gmarik/Vundle.vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'godlygeek/tabular'
 " Plugin 'jgdavey/tslime.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'sjl/gundo.vim'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
+Plug 'kien/ctrlp.vim'
+Plug 'sjl/gundo.vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'janko-m/vim-test'
 
 "Ruby & Rails Related
 " Plugin 'kana/vim-textobj-user.git'
@@ -50,13 +48,13 @@ Plugin 'tpope/vim-unimpaired'
 " Bundle 'davidoc/taskpaper.vim'
 " Bundle 'vim-pandoc/vim-pandoc'
 " Bundle 'kovisoft/slimv'
-Plugin 'wlangstroth/vim-racket'
-Plugin 'guns/vim-clojure-static'
-Plugin 'Keithbsmiley/swift.vim'
-Bundle 'jimenezrick/vimerl'
-Bundle 'mattonrails/vim-mix'
-Bundle 'dag/vim2hs'
-Plugin 'elixir-lang/vim-elixir'
+Plug 'guns/vim-clojure-static'
+Plug 'Keithbsmiley/swift.vim'
+Plug 'jimenezrick/vimerl'
+Plug 'mattonrails/vim-mix'
+Plug 'dag/vim2hs'
+Plug 'elixir-lang/vim-elixir'
+Plug 'ElmCast/elm-vim'
 
 " Swift Autocompletion related plugins
 " Plugin 'mitsuse/autocomplete-swift'
@@ -64,7 +62,7 @@ Plugin 'elixir-lang/vim-elixir'
 " Plugin 'Shougo/neosnippet'
 " Plugin 'Shougo/neosnippet-snippets'
 
-call vundle#end()
+call plug#end()
 
 "General Setup
 syntax on
@@ -80,11 +78,11 @@ if has("autocmd") && exists("+omnifunc")
 	autocmd Filetype ruby setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab foldmethod=syntax
 	autocmd Filetype css setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab foldmethod=indent
 	autocmd Filetype scss setl softtabstop=2 shiftwidth=2 tabstop=2 expandtab foldmethod=indent
-	autocmd Filetype haskell setl softtabstop=4 expandtab
-	autocmd Filetype elixir setl makeprg=elixir\ %
+	autocmd Filetype haskell setl softtabstop=2 expandtab tabstop=2 shiftwidth=2 compiler gcc
 	autocmd Filetype pandoc setl spell undofile spelllang=en_us
 	autocmd Filetype mail setl spell spelllang=en_us
 	autocmd Filetype markdown setl spell
+	autocmd Filetype elixir compiler exunit
 	autocmd Filetype racket setl makeprg=racket\ %
 	autocmd Filetype txt setl spell
 	autocmd Filetype swift setl makeprg=swift\ % errorformat=%f:%l:%c:\ error:\ %m
@@ -139,7 +137,6 @@ let g:Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
 let g:airline_left_sep=' '
 let g:airline_right_sep=' '
 " let g:airline_section_z='BUF #%n'
-let g:airline_theme='base16_eighties'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_user_command = 'ag %s -l -nocolor -g ""'
@@ -177,9 +174,14 @@ nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 nnoremap <leader>u :GundoToggle<CR>
 nnoremap <silent> <leader>k= mmgg=G`m<CR>
 nnoremap <leader>K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-nnoremap <leader>c :w<CR>:Dispatch<CR>
+nnoremap <leader>d :w<CR>:Dispatch<CR>
 map <Leader>g :Gst<CR>
-
+let test#strategy = "dispatch"
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>f :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
 " Wildmenu
 set wildmenu
 set wildmode=list:longest
@@ -187,33 +189,19 @@ set wildignore+=*.DS_Store
 
 " Colors
 "
-let base16colorspace=256
-colorscheme base16-eighties
-highlight StatusLineNC guifg=#586E75 guibg=#EEE8D5 gui=reverse,bold ctermfg=7 ctermbg=12 cterm=reverse,bold
-highlight MatchParen cterm=bold gui=bold guifg=#FDF6E3 guibg=#D33682 ctermfg=015 ctermbg=005
+" let base16colorspace=256
+set termguicolors
+set background=dark
+colorscheme gruvbox
+let g:gruvbox_contrast_light='soft'
+let g:gruvbox_contrast_dark='hard'
+let g:airline_theme='gruvbox'
+" highlight StatusLineNC guifg=#586E75 guibg=#EEE8D5 gui=reverse,bold ctermfg=7 ctermbg=12 cterm=reverse,bold
+" highlight MatchParen cterm=bold gui=bold guifg=#FDF6E3 guibg=#D33682 ctermfg=015 ctermbg=005
 highlight Comment cterm=italic gui=italic
 highlight String cterm=italic gui=italic
-highlight Type cterm=italic gui=italic
+" highlight Type cterm=italic gui=italic
 
 " Spellbad settings
 highlight clear SpellBad
 highlight SpellBad guifg=#FFFFFF guibg=#FF0000 ctermfg=red cterm=underline
-
-function! RunFile()
-	if &filetype=='swift'
-		silent !clear
-		execute "!swift " . expand("%:p")
-	endif
-	if &filetype=='sml'
-		silent !clear
-		execute "!" . shellescape(expand("%:r"))
-	endif
-	if &filetype=='racket'
-		silent !clear
-		execute "!racket " . expand("%:p")
-	endif
-	if &filetype=='elixir'
-		silent !clear
-		execute "!elixir " . expand("%:p")
-	endif
-endfunction
