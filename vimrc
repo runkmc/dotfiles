@@ -6,7 +6,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
-" Plugin 'chriskempson/base16-vim'
 Plug 'morhetz/gruvbox'
 
 " Vim behavior
@@ -45,7 +44,6 @@ Plug 'janko-m/vim-test'
 " Plugin 'tpope/vim-fireplace'
 " Bundle 'xhr/vim-io'
 " Bundle 'kovisoft/paredit'
-" Bundle 'davidoc/taskpaper.vim'
 " Bundle 'vim-pandoc/vim-pandoc'
 " Bundle 'kovisoft/slimv'
 Plug 'guns/vim-clojure-static'
